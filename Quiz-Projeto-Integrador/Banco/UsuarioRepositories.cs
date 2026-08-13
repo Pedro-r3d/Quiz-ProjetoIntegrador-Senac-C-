@@ -1,0 +1,43 @@
+﻿using Dapper;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Quiz_Projeto_Integrador.Banco
+{
+    public class UsuarioRepositories
+    {
+        private static ConexaoBanco ConexaoBanco = new ConexaoBanco();
+
+        public static async Task Adicionar(Usuario usuario)
+        {
+            // conectar com o banco e inserir funcionario 
+
+            await ConexaoBanco.CriarConexao().QueryAsync(
+                 @"
+                    INSERT INTO usuario (Nome, Nickname, Senha, DataDeNascimento)
+                    VALUES (@Nome, @Nickname, @Senha, @DataDeNascimento)
+                ",
+                 usuario
+                 );
+        }
+
+    public static async Task<IEnumerable<Usuario>> ObterNickSenha()
+        {
+            var usuario = await ConexaoBanco.CriarConexao().QueryAsync<Usuario>(
+                @"
+                    SELECT
+                      Nickname,
+                      Senha,
+                    FROM
+                      Usuario
+                 ");
+            return usuario;
+
+        }
+
+
+    }
+}

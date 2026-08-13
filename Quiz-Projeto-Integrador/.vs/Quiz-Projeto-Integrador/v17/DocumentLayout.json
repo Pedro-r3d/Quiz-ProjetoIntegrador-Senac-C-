@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\pedromarquesdemoura\\desktop\\c#\\quiz-projeto-integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\pedromarquesdemoura\\desktop\\c#\\quiz-projeto-integrador\\banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 203,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
+              "RelativeDocumentMoniker": "Telas\\Login.cs",
+              "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs [Design]",
+              "RelativeToolTip": "Telas\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T00:33:52.211Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Banco\\UsuarioRepositories.cs",
+              "RelativeDocumentMoniker": "Banco\\UsuarioRepositories.cs",
+              "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Banco\\UsuarioRepositories.cs",
+              "RelativeToolTip": "Banco\\UsuarioRepositories.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T23:25:13.785Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
+              "RelativeDocumentMoniker": "Telas\\Login.cs",
+              "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
+              "RelativeToolTip": "Telas\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T00:47:00.918Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
