@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\pedromarquesdemoura\\desktop\\c#\\quiz-projeto-integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -27,15 +27,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cs [Projeto]",
+              "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
               "RelativeDocumentMoniker": "Telas\\Login.cs",
-              "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs [Projeto]",
-              "RelativeToolTip": "Telas\\Login.cs [Projeto]",
+              "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs [Design]",
+              "RelativeToolTip": "Telas\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-13T00:33:52.211Z",
               "IsPinned": true,
-              "EditorCaption": " [Projeto]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -48,8 +48,7 @@
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T23:25:13.785Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -59,7 +58,7 @@
               "RelativeDocumentMoniker": "Telas\\Login.cs",
               "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
               "RelativeToolTip": "Telas\\Login.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-13T00:47:00.918Z",
               "EditorCaption": ""
