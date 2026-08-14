@@ -7,8 +7,16 @@
     <Compile Update="Telas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="Telas\QuizAlternativa.cs">
     <Compile Update="Telas\PerfilDoUsuario.cs">
+=======
+<<<<<<< HEAD
+    <Compile Update="Telas\QuizAlternativa.cs">
+=======
+    <Compile Update="Telas\PerfilDoUsuario.cs">
+>>>>>>> 39db2409d5fd4d5d9a87bb1bc92bc2e07b9042ba
+>>>>>>> 3795e9ea065875cafa8fe3c97b01647cab671724
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\TelaInicial.cs">

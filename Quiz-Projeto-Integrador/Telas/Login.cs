@@ -20,12 +20,10 @@ namespace Quiz_Projeto_Integrador.Telas
             string nick = txtLogarNick.Text;
             string senha = txtLogarSenha.Text;
 
-            string senhaCrypt = BCrypt.Net.BCrypt.HashPassword(senha, workFactor: 12);
-
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
 
 
-            if (usuario.SenhaCorreta(senhaCrypt))
+            if (usuario.SenhaCorreta(senha))
             {
                 this.Hide();
                 new TelaPrincipal().ShowDialog();

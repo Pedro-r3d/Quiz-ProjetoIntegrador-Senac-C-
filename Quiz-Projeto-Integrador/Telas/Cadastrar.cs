@@ -1,4 +1,5 @@
-﻿using Quiz_Projeto_Integrador.Banco;
+﻿using BCrypt.Net;
+using Quiz_Projeto_Integrador.Banco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,7 @@ namespace Quiz_Projeto_Integrador.Telas
             //Guardar informações
             string nome = txtNome.Text;
             string senha = txtSenha.Text;
+            string senhaCryptografada = BCrypt.Net.BCrypt.HashPassword(senha, workFactor: 12);
             string nickname = txtNickname.Text;
 
        //Verificar se campos foram preenchidos
@@ -46,7 +48,7 @@ namespace Quiz_Projeto_Integrador.Telas
             else
             {
                 DateTime dataDeNascimento = dtpDataDeNascimento.Value;
-                var usuario = new Usuario(senha, nickname, nome, dataDeNascimento);
+                var usuario = new Usuario(senhaCryptografada, nickname, nome, dataDeNascimento);
 
                 await UsuarioRepositories.Adicionar(usuario);
                 MessageBox.Show("Cadastro realizado", "Nova conta criada", MessageBoxButtons.OK);
