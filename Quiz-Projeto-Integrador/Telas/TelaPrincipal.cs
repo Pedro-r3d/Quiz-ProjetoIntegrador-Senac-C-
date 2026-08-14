@@ -23,5 +23,12 @@ namespace Quiz_Projeto_Integrador.Telas
             new QuizAlternativa().ShowDialog();
             this.Show();
         }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new PerfilDoUsuario().ShowDialog();
+            this.Show();
+        }
     }
 }
