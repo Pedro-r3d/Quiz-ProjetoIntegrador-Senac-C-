@@ -34,22 +34,24 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.ActiveCaption;
             button1.Location = new Point(292, 150);
             button1.Name = "button1";
             button1.Size = new Size(196, 81);
             button1.TabIndex = 0;
             button1.Text = "Cadastrar usuário";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.ActiveCaption;
             button2.Location = new Point(292, 271);
             button2.Name = "button2";
             button2.Size = new Size(196, 81);
             button2.TabIndex = 1;
             button2.Text = "Fazer login";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // TelaInicial
