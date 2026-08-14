@@ -33,6 +33,8 @@ namespace Quiz_Projeto_Integrador.Banco
                       Senha
                     FROM
                       usuario
+                    WHERE
+                      Nickname = @Nickname
                  ",
                 new
                 {
