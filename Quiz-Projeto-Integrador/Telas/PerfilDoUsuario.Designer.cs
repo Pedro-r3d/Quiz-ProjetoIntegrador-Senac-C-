@@ -166,7 +166,6 @@
             label2.Size = new Size(36, 25);
             label2.TabIndex = 18;
             label2.Text = "ccc";
-<<<<<<< HEAD
             // 
             // label3
             // 
@@ -174,9 +173,6 @@
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
             label3.TabIndex = 21;
-=======
-         
->>>>>>> 3795e9ea065875cafa8fe3c97b01647cab671724
             // 
             // label4
             // 
