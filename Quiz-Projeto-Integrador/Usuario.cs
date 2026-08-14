@@ -18,12 +18,24 @@ namespace Quiz_Projeto_Integrador
         Nickname = nickname;
         Nome = nome;
         DataDeNascimento = dataDeNascimento;
-        
         }
+
+        public Usuario(
+            string nickname,
+            string senha)
+        { 
+        Senha = senha;
+        Nickname = nickname;
+        }
+
         public string Senha { get; set; } 
         public string Nickname { get; set;}
         public string Nome { get; set;}
         public DateTime DataDeNascimento { get;set; }
 
+        public bool SenhaCorreta(string senhaDigitada)
+        {
+            return BCrypt.Net.BCrypt.Verify(senhaDigitada, this.Senha);
+        }
     }
 }
