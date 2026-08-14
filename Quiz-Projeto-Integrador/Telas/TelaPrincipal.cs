@@ -19,7 +19,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnQuiz_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new QuizAlternativa().ShowDialog();
+            this.Show();
         }
     }
 }
