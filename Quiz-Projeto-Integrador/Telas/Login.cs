@@ -28,7 +28,9 @@ namespace Quiz_Projeto_Integrador.Telas
                 this.Hide();
                 new TelaPrincipal().ShowDialog();
                 this.Show();
-            } else { MessageBox.Show("Erro"); }
+            }
+            else
+            { MessageBox.Show("Erro"); }
         }
     }
 }
