@@ -166,17 +166,6 @@
             label2.TabIndex = 18;
             label2.Text = "ccc";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(606, 371);
-            label3.Name = "label3";
-            label3.Size = new Size(36, 25);
-            label3.TabIndex = 19;
-            label3.Text = "ccc";
-            label3.Click += this.label3_Click;
-            // 
             // label4
             // 
             label4.AutoSize = true;

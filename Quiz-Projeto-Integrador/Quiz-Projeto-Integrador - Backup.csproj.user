@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
   <ItemGroup>
     <Compile Update="Telas\Cadastrar.cs">
       <SubType>Form</SubType>
@@ -8,10 +7,11 @@
     <Compile Update="Telas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Telas\PerfilDoUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
+<<<<<<< HEAD
     <Compile Update="Telas\QuizAlternativa.cs">
+=======
+    <Compile Update="Telas\PerfilDoUsuario.cs">
+>>>>>>> 39db2409d5fd4d5d9a87bb1bc92bc2e07b9042ba
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\TelaInicial.cs">
