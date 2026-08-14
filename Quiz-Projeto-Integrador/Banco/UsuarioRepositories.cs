@@ -39,7 +39,7 @@ namespace Quiz_Projeto_Integrador.Banco
                     Nickname = nickname,
                     Senha = senha
                 });
-            return (Usuario)usuario;
+            return usuario;
         }
 
 
