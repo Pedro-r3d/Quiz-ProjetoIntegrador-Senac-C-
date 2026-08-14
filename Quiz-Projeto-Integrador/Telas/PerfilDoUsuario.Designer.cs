@@ -43,6 +43,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // lblPerguntasRespondidas
@@ -150,7 +151,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(562, 371);
+            label1.Location = new Point(566, 371);
             label1.Name = "label1";
             label1.Size = new Size(36, 25);
             label1.TabIndex = 17;
@@ -160,7 +161,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(653, 371);
+            label2.Location = new Point(650, 371);
             label2.Name = "label2";
             label2.Size = new Size(36, 25);
             label2.TabIndex = 18;
@@ -168,14 +169,10 @@
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(606, 371);
+            label3.Location = new Point(0, 0);
             label3.Name = "label3";
-            label3.Size = new Size(36, 25);
-            label3.TabIndex = 19;
-            label3.Text = "ccc";
-            label3.Click += this.label3_Click;
+            label3.Size = new Size(100, 23);
+            label3.TabIndex = 21;
             // 
             // label4
             // 
@@ -187,11 +184,22 @@
             label4.TabIndex = 20;
             label4.Text = "cccccccccccccccccccc";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(608, 371);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 25);
+            label5.TabIndex = 22;
+            label5.Text = "ccc";
+            // 
             // PerfilDoUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -229,5 +237,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label label5;
     }
 }
