@@ -1,18 +1,27 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\",
+  "WorkspaceRootPath": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\pedromarquesdemoura\\desktop\\c#\\quiz-projeto-integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\luisfelipekurtzleao\\desktop\\quiz-projetointegrador-senac-c-\\quiz-projeto-integrador\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\pedromarquesdemoura\\desktop\\c#\\quiz-projeto-integrador\\banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\luisfelipekurtzleao\\desktop\\quiz-projetointegrador-senac-c-\\quiz-projeto-integrador\\banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:banco\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\luisfelipekurtzleao\\desktop\\quiz-projetointegrador-senac-c-\\quiz-projeto-integrador\\telas\\cadastrar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\cadastrar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|c:\\users\\luisfelipekurtzleao\\desktop\\quiz-projetointegrador-senac-c-\\quiz-projeto-integrador\\telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{408F62FD-E400-4913-B5A6-0D6CF2055A04}|Quiz-Projeto-Integrador.csproj|solutionrelative:telas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 39db2409d5fd4d5d9a87bb1bc92bc2e07b9042ba
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +31,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 203,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
               "RelativeDocumentMoniker": "Telas\\Login.cs",
@@ -49,18 +59,64 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-12T23:25:13.785Z",
               "IsPinned": true
+=======
+              "Title": "Cadastrar.cs",
+              "DocumentMoniker": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Telas\\Cadastrar.cs",
+              "RelativeDocumentMoniker": "Telas\\Cadastrar.cs",
+              "ToolTip": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Telas\\Cadastrar.cs",
+              "RelativeToolTip": "Telas\\Cadastrar.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T00:38:34.696Z",
+              "EditorCaption": ""
+>>>>>>> 39db2409d5fd4d5d9a87bb1bc92bc2e07b9042ba
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
               "RelativeDocumentMoniker": "Telas\\Login.cs",
               "ToolTip": "C:\\Users\\PEDROMARQUESDEMOURA\\Desktop\\C#\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
               "RelativeToolTip": "Telas\\Login.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
+=======
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Usuario.cs",
+              "RelativeDocumentMoniker": "Usuario.cs",
+              "ToolTip": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Usuario.cs",
+              "RelativeToolTip": "Usuario.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA6wCUAAAAMAAAAAAAAAA==",
+>>>>>>> 39db2409d5fd4d5d9a87bb1bc92bc2e07b9042ba
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T00:47:00.918Z",
+              "WhenOpened": "2026-08-13T23:58:14.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Banco\\UsuarioRepositories.cs",
+              "RelativeDocumentMoniker": "Banco\\UsuarioRepositories.cs",
+              "ToolTip": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Banco\\UsuarioRepositories.cs",
+              "RelativeToolTip": "Banco\\UsuarioRepositories.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBwAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T23:24:40.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
+              "RelativeDocumentMoniker": "Telas\\Login.cs",
+              "ToolTip": "C:\\Users\\LUISFELIPEKURTZLEAO\\Desktop\\Quiz-ProjetoIntegrador-Senac-C-\\Quiz-Projeto-Integrador\\Telas\\Login.cs",
+              "RelativeToolTip": "Telas\\Login.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T23:39:24.512Z",
               "EditorCaption": ""
             }
           ]

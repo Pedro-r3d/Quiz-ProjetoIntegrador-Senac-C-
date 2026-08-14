@@ -32,7 +32,7 @@
             txtLogarNick = new TextBox();
             label1 = new Label();
             txtLogarSenha = new TextBox();
-            button1 = new Button();
+            btnLogin = new Button();
             SuspendLayout();
             // 
             // lblLogarNick
@@ -70,22 +70,22 @@
             txtLogarSenha.Size = new Size(184, 31);
             txtLogarSenha.TabIndex = 3;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(328, 318);
-            button1.Name = "button1";
-            button1.Size = new Size(122, 42);
-            button1.TabIndex = 4;
-            button1.Text = "Logar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnLogin.Location = new Point(328, 318);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(122, 42);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Logar";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += button1_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(txtLogarSenha);
             Controls.Add(label1);
             Controls.Add(txtLogarNick);
@@ -102,6 +102,6 @@
         private TextBox txtLogarNick;
         private Label label1;
         private TextBox txtLogarSenha;
-        private Button button1;
+        private Button btnLogin;
     }
 }

@@ -1,13 +1,5 @@
-﻿using Quiz_Projeto_Integrador.Banco;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BCrypt.Net;
+using Quiz_Projeto_Integrador.Banco;
 
 namespace Quiz_Projeto_Integrador.Telas
 {
@@ -25,10 +17,20 @@ namespace Quiz_Projeto_Integrador.Telas
 
         public async void button1_Click(object sender, EventArgs e)
         {
-            var usuario = await UsuarioRepositories.ObterNickSenha();
+            string nick = txtLogarNick.Text;
+            string senha = txtLogarSenha.Text;
+
+            string senhaCrypt = BCrypt.Net.BCrypt.HashPassword(senha, workFactor: 12);
+
+            var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
 
 
-
+            if (usuario.SenhaCorreta(senhaCrypt))
+            {
+                this.Hide();
+                new TelaPrincipal().ShowDialog();
+                this.Show();
+            } else { MessageBox.Show("Erro"); }
         }
     }
 }

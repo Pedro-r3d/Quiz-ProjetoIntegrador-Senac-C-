@@ -24,18 +24,22 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
-    public static async Task<IEnumerable<Usuario>> ObterNickSenha()
+    public static async Task<Usuario> ObterNickSenha(string nickname, string senha)
         {
-            var usuario = await ConexaoBanco.CriarConexao().QueryAsync<Usuario>(
+            var usuario = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Usuario>(
                 @"
                     SELECT
                       Nickname,
-                      Senha,
+                      Senha
                     FROM
-                      Usuario
-                 ");
-            return usuario;
-
+                      usuario
+                 ",
+                new
+                {
+                    Nickname = nickname,
+                    Senha = senha
+                });
+            return (Usuario)usuario;
         }
 
 
