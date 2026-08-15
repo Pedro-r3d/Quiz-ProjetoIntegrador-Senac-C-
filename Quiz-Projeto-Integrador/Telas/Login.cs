@@ -22,13 +22,20 @@ namespace Quiz_Projeto_Integrador.Telas
 
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
 
+            if(usuario == null)
+            {
+                MessageBox.Show("Usuario ou senha incorretos");
+
+                return;
+            }
 
             if (usuario.SenhaCorreta(senha))
             {
                 this.Hide();
                 new TelaPrincipal().ShowDialog();
                 this.Show();
-            } else { MessageBox.Show("Erro"); }
+            }
+          
         }
     }
 }

@@ -61,6 +61,7 @@
             btnPerfil.TabIndex = 2;
             btnPerfil.Text = "Ver perfil";
             btnPerfil.UseVisualStyleBackColor = true;
+            btnPerfil.Click += btnPerfil_Click;
             // 
             // btnHistorico
             // 

@@ -30,6 +30,13 @@ namespace Quiz_Projeto_Integrador.Telas
             string senhaCryptografada = BCrypt.Net.BCrypt.HashPassword(senha, workFactor: 12);
             string nickname = txtNickname.Text;
 
+            bool existeNick = await UsuarioRepositories.ExisteNickname(nickname);
+            if (existeNick) 
+            {
+                MessageBox.Show("Esse nickname já está em uso.");
+                return;
+            }
+
        //Verificar se campos foram preenchidos
             if (txtNome.Text == "" || txtSenha.Text == "" || txtNickname.Text == "")
             {

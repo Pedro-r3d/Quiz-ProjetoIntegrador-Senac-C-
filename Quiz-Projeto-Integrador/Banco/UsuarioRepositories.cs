@@ -33,6 +33,8 @@ namespace Quiz_Projeto_Integrador.Banco
                       Senha
                     FROM
                       usuario
+                    WHERE
+                      Nickname = @Nickname
                  ",
                 new
                 {
@@ -42,6 +44,25 @@ namespace Quiz_Projeto_Integrador.Banco
             return usuario;
         }
 
+        public static async Task<bool> ExisteNickname(string nickname)
+        {
+            var conexao = ConexaoBanco.CriarConexao();
+
+            int quantidade = await conexao.ExecuteScalarAsync<int>(
+                @"
+                  SELECT COUNT(1)
+                  FROM usuario
+                  WHERE Nickname = @Nickname
+                 ",
+                new
+                {
+                    Nickname = nickname,
+                });
+            return quantidade > 0;
+        }  
+               
+
+        }
+
 
     }
-}
