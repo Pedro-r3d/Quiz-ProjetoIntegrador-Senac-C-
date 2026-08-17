@@ -43,6 +43,8 @@
             btnQuiz.Text = "Iniciar quiz";
             btnQuiz.UseVisualStyleBackColor = true;
             btnQuiz.Click += btnQuiz_Click;
+            btnQuiz.MouseEnter += btnQuiz_MouseEnter;
+            btnQuiz.MouseLeave += btnQuiz_MouseLeave;
             // 
             // btnRaking
             // 
@@ -52,6 +54,9 @@
             btnRaking.TabIndex = 1;
             btnRaking.Text = "Ranking";
             btnRaking.UseVisualStyleBackColor = true;
+            btnRaking.Click += btnRaking_Click;
+            btnRaking.MouseEnter += btnRaking_MouseEnter;
+            btnRaking.MouseLeave += btnRaking_MouseLeave;
             // 
             // btnPerfil
             // 
@@ -62,6 +67,9 @@
             btnPerfil.Text = "Ver perfil";
             btnPerfil.UseVisualStyleBackColor = true;
             btnPerfil.Click += btnPerfil_Click;
+            btnPerfil.Enter += btnPerfil_Enter;
+            btnPerfil.MouseEnter += btnPerfil_MouseEnter;
+            btnPerfil.MouseLeave += btnPerfil_MouseLeave;
             // 
             // btnHistorico
             // 
@@ -71,6 +79,9 @@
             btnHistorico.TabIndex = 3;
             btnHistorico.Text = "Histórico";
             btnHistorico.UseVisualStyleBackColor = true;
+            btnHistorico.Click += btnHistorico_Click;
+            btnHistorico.MouseEnter += btnHistorico_MouseEnter;
+            btnHistorico.MouseLeave += btnHistorico_MouseLeave;
             // 
             // TelaPrincipal
             // 

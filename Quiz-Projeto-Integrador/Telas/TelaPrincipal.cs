@@ -26,9 +26,68 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             new PerfilDoUsuario().ShowDialog();
             this.Show();
         }
+
+        private void btnRaking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnQuiz_MouseEnter(object sender, EventArgs e)
+        {
+            btnQuiz.BackColor = Color.LightGreen;
+        }
+
+        private void btnPerfil_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRaking_MouseEnter(object sender, EventArgs e)
+        {
+            btnRaking.BackColor = Color.LightGreen;
+
+        }
+
+        private void btnPerfil_MouseEnter(object sender, EventArgs e)
+        {
+            btnPerfil.BackColor = Color.LightGreen;
+
+        }
+
+        private void btnHistorico_MouseEnter(object sender, EventArgs e)
+        {
+            btnHistorico.BackColor = Color.LightGreen;
+        }
+
+        private void btnQuiz_MouseLeave(object sender, EventArgs e)
+        {
+            btnQuiz.BackColor = Color.FromKnownColor(KnownColor.Control);
+        }
+
+        private void btnRaking_MouseLeave(object sender, EventArgs e)
+        {
+            btnRaking.BackColor = Color.FromKnownColor(KnownColor.Control);
+        }
+
+        private void btnHistorico_MouseLeave(object sender, EventArgs e)
+        {
+            btnHistorico.BackColor = Color.FromKnownColor(KnownColor.Control);
+        }
+
+        private void btnPerfil_MouseLeave(object sender, EventArgs e)
+        {
+            btnPerfil.BackColor = Color.FromKnownColor(KnownColor.Control);
+        }
+
+     
     }
 }
