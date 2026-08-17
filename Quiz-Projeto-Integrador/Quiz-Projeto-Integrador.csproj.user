@@ -5,6 +5,9 @@
     <Compile Update="Telas\Cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\Historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -15,6 +18,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\ranking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\TelaInicial.cs">
