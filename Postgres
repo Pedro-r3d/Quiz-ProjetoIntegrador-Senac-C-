@@ -42,3 +42,14 @@ Correta varchar(255) not null,
 Errada varchar(255) not null,
 foreign key (PerguntaId) references Pergunta(Id)
 )
+
+select u.nickname, h.pontos, count(r.correta or null), count(r.correta), r.tema, count(r.*) as frequencia
+from usuario u 
+inner join historico h
+on u.id = h.usuarioid
+inner join registro r
+on h.id = r.historicoid
+where u.id = 5
+group by u.nickname, h.pontos, r.tema
+order by frequencia desc
+limit 1
