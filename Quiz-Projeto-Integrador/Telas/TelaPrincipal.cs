@@ -45,7 +45,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Historico().ShowDialog();
+            this.Show();
         }
         private void btnQuiz_MouseEnter(object sender, EventArgs e)
         {
