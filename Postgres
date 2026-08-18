@@ -42,3 +42,84 @@ Correta varchar(255) not null,
 Errada varchar(255) not null,
 foreign key (PerguntaId) references Pergunta(Id)
 )
+
+select u.nickname, h.pontos, count(r.correta or null), count(r.correta), r.tema, count(r.*) as frequencia
+from usuario u 
+inner join historico h
+on u.id = h.usuarioid
+inner join registro r
+on h.id = r.historicoid
+where u.id = 5
+group by u.nickname, h.pontos, r.tema
+order by frequencia desc
+limit 1
+
+
+-- USUÁRIOS
+INSERT INTO Usuario (Nome, Nickname, Senha, DataDeNascimento)
+VALUES
+('João Silva', 'joao123', 'senha123', '2000-05-15'),
+('Maria Souza', 'maria10', 'senha456', '1999-08-20'),
+('Carlos Oliveira', 'carlos01', 'senha789', '2002-02-10');
+
+
+-- HISTÓRICO DOS QUIZZES
+INSERT INTO Historico (UsuarioId, DataDoQuiz, Pontos)
+VALUES
+(1, '2026-08-10', 80),
+(1, '2026-08-15', 100),
+(2, '2026-08-12', 60),
+(3, '2026-08-16', 90);
+
+
+-- PERGUNTAS
+INSERT INTO Pergunta (Questao, Tipo, Nivel, Tema, Pontos)
+VALUES
+('Qual é a capital do Brasil?', 'MultiplaEscolha', 'Fácil', 'Geografia', 10),
+
+('Qual linguagem é conhecida por ser usada no desenvolvimento web?', 'MultiplaEscolha', 'Fácil', 'Programação', 10),
+
+('Quanto é 2 + 2?', 'VerdadeiroOuFalso', 'Fácil', 'Matemática', 10),
+
+('O PostgreSQL é um banco de dados relacional?', 'VerdadeiroOuFalso', 'Fácil', 'Banco de Dados', 10),
+
+('Qual comando é utilizado para consultar dados no SQL?', 'MultiplaEscolha', 'Médio', 'SQL', 20);
+
+
+-- ALTERNATIVAS DAS PERGUNTAS DE MÚLTIPLA ESCOLHA
+INSERT INTO Alternativas
+(PerguntaId, Correta, EscolhaA, EscolhaB, EscolhaC)
+VALUES
+(1, 'Brasília', 'Brasília', 'São Paulo', 'Rio de Janeiro'),
+
+(2, 'JavaScript', 'Python', 'JavaScript', 'C++'),
+
+(5, 'SELECT', 'INSERT', 'SELECT', 'DELETE');
+
+
+-- PERGUNTAS DE VERDADEIRO OU FALSO
+INSERT INTO VerdadeiroOuFalso
+(PerguntaId, Correta, Errada)
+VALUES
+(3, 'Verdadeiro', 'Falso'),
+
+(4, 'Verdadeiro', 'Falso');
+
+
+-- REGISTROS DAS RESPOSTAS
+INSERT INTO Registro
+(HistoricoId, Pergunta, Tema, Correta, Valor)
+VALUES
+(1, 'Qual é a capital do Brasil?', 'Geografia', TRUE, 10),
+(1, 'Qual linguagem é conhecida por ser usada no desenvolvimento web?', 'Programação', TRUE, 10),
+(1, 'Quanto é 2 + 2?', 'Matemática', TRUE, 10),
+
+(2, 'Qual é a capital do Brasil?', 'Geografia', TRUE, 10),
+(2, 'Qual linguagem é conhecida por ser usada no desenvolvimento web?', 'Programação', TRUE, 10),
+(2, 'O PostgreSQL é um banco de dados relacional?', 'Banco de Dados', TRUE, 10),
+
+(3, 'Qual é a capital do Brasil?', 'Geografia', TRUE, 10),
+(3, 'Quanto é 2 + 2?', 'Matemática', FALSE, 0),
+
+(4, 'Qual comando é utilizado para consultar dados no SQL?', 'SQL', TRUE, 20);
+
