@@ -12,7 +12,7 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class TelaPrincipal : Form
     {
-        private int usuarioLogado;
+        public int usuarioLogado;
 
         public TelaPrincipal(int idUsuario)
         {
@@ -39,7 +39,7 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnRaking_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new ranking().ShowDialog();
+            new ranking(usuarioLogado).ShowDialog();
             this.Show();
         }
 

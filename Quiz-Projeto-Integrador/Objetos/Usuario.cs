@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz_Projeto_Integrador
+namespace Quiz_Projeto_Integrador.Objetos
 {
     public class Usuario
     {
@@ -43,7 +43,7 @@ namespace Quiz_Projeto_Integrador
 
         public bool SenhaCorreta(string senhaDigitada)
         {
-            return BCrypt.Net.BCrypt.Verify(senhaDigitada, this.Senha);
+            return BCrypt.Net.BCrypt.Verify(senhaDigitada, Senha);
         }
     }
 }

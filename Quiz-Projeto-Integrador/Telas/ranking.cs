@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Objetos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,14 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class ranking : Form
     {
-        public ranking()
+        public int usuarioLogado;
+
+        public ranking(int idUsuarioPerfil)
         {
+
             InitializeComponent();
+            usuarioLogado = idUsuarioPerfil;
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -22,9 +29,47 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
-        private void ranking_Load(object sender, EventArgs e)
+        private async void ranking_Load(object sender, EventArgs e)
+        {
+            var usuarios = await UsuarioRepositories.ObterTodos();
+
+            dgvUsuarios.DataSource = new BindingList<Usuario>(usuarios.ToList());
+
+            dgvUsuarios.SelectionChanged -= dgvUsuarios_SelectionChanged;
+
+            foreach (DataGridViewRow row in dgvUsuarios.Rows)
+            {
+                if (row.Cells["Id"].Value != null &&
+           Convert.ToInt32(row.Cells["Id"].Value) == usuarioLogado)
+                {
+                    row.Selected = true;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
+
+            dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
+
+        }
+
+        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        
+            }
+        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnVerPerfil_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new PerfilDoUsuario(usuarioLogado).ShowDialog();
+            this.Show();
         }
     }
 }

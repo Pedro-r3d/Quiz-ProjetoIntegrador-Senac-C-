@@ -74,6 +74,7 @@
             Controls.Add(dataGridView1);
             Name = "Historico";
             Text = "Historico";
+            Load += Historico_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

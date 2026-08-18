@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Quiz_Projeto_Integrador.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,25 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
+        public static async Task<IEnumerable<Usuario>> ObterTodos()
+        {
+            var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<Usuario>(
+                @"
+                    select u.nickname, h.pontos, count(r.correta or null), count(r.correta), r.tema, count(r.*) as frequencia
+                    from usuario u 
+                    inner join historico h
+                    on u.id = h.usuarioid
+                    inner join registro r
+                    on h.id = r.historicoid
+                    where u.id = 3
+                    group by u.nickname, h.pontos, r.tema
+                    order by frequencia desc
+                    limit 1           
+                 ");
+
+            return usuarios;
+        }
+   
         public static async Task<Usuario> ObterNickSenha(string nickname, string senha)
         {
             var usuario = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Usuario>(
