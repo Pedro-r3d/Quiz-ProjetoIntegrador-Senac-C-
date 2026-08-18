@@ -12,9 +12,13 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class TelaPrincipal : Form
     {
-        public TelaPrincipal()
+        private int usuarioLogado;
+
+        public TelaPrincipal(int idUsuario)
         {
             InitializeComponent();
+
+            usuarioLogado = idUsuario;
         }
 
         private void btnQuiz_Click(object sender, EventArgs e)
@@ -26,15 +30,17 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-
+         
             this.Hide();
-            new PerfilDoUsuario().ShowDialog();
+            new PerfilDoUsuario(usuarioLogado).ShowDialog();
             this.Show();
         }
 
         private void btnRaking_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new ranking().ShowDialog();
+            this.Show();
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
@@ -88,6 +94,21 @@ namespace Quiz_Projeto_Integrador.Telas
             btnPerfil.BackColor = Color.FromKnownColor(KnownColor.Control);
         }
 
-     
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+           this.Close();
+        }
+
+        private void btnSair_MouseEnter(object sender, EventArgs e)
+        {
+            btnSair.BackColor = Color.LightCoral;
+        }
+        private void btnSair_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnSair.BackColor = Color.FromKnownColor(KnownColor.Control);
+
+        }
+
+
     }
 }

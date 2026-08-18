@@ -31,8 +31,15 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (usuario.SenhaCorreta(senha))
             {
+                int idUsuario = usuario.Id;
+
+                if (idUsuario == null) {
+                    MessageBox.Show("Id não encontrado");
+                    return;
+                }
+
                 this.Hide();
-                new TelaPrincipal().ShowDialog();
+                new TelaPrincipal(idUsuario).ShowDialog();
                 this.Show();
             }
           

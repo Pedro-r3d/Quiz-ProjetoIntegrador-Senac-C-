@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quiz_Projeto_Integrador.Banco;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,28 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class PerfilDoUsuario : Form
     {
-        public PerfilDoUsuario()
-        {
+
+        public int usuarioLogado;
+        public PerfilDoUsuario(int idUsuario) { 
             InitializeComponent();
+
+            usuarioLogado = idUsuario;
+        
+        }
+
+        private async void PerfilDoUsuario_Load(object sender, EventArgs e)
+        {
+            var usuario = await UsuarioRepositories.SelectPorId(usuarioLogado);
+
+
+            if (usuario == null)
+            {
+                MessageBox.Show("Usuário não encontrado.");
+                return;
+            }
+
+
+            lblNickname.Text = usuario.Nickname;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,6 +48,12 @@ namespace Quiz_Projeto_Integrador.Telas
         }
 
         private void lblConquistas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        private void lblNickname_Click(object sender, EventArgs e)
         {
 
         }

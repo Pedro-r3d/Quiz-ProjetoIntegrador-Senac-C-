@@ -77,11 +77,12 @@
             // lblNickname
             // 
             lblNickname.AutoSize = true;
-            lblNickname.Location = new Point(13, 20);
+            lblNickname.Location = new Point(15, 20);
             lblNickname.Name = "lblNickname";
             lblNickname.Size = new Size(90, 25);
             lblNickname.TabIndex = 9;
             lblNickname.Text = "Nickname";
+            lblNickname.Click += lblNickname_Click;
             // 
             // lblPontos
             // 
@@ -217,6 +218,7 @@
             Controls.Add(lblPerguntasRespondidas);
             Name = "PerfilDoUsuario";
             Text = "Perfil do usuário";
+            Load += PerfilDoUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }

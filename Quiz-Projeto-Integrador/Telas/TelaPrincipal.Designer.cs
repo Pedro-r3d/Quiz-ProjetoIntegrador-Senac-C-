@@ -32,11 +32,12 @@
             btnRaking = new Button();
             btnPerfil = new Button();
             btnHistorico = new Button();
+            btnSair = new Button();
             SuspendLayout();
             // 
             // btnQuiz
             // 
-            btnQuiz.Location = new Point(281, 68);
+            btnQuiz.Location = new Point(281, 12);
             btnQuiz.Name = "btnQuiz";
             btnQuiz.Size = new Size(212, 70);
             btnQuiz.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // btnRaking
             // 
-            btnRaking.Location = new Point(281, 144);
+            btnRaking.Location = new Point(281, 88);
             btnRaking.Name = "btnRaking";
             btnRaking.Size = new Size(212, 70);
             btnRaking.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // btnPerfil
             // 
-            btnPerfil.Location = new Point(281, 296);
+            btnPerfil.Location = new Point(281, 240);
             btnPerfil.Name = "btnPerfil";
             btnPerfil.Size = new Size(212, 70);
             btnPerfil.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             // btnHistorico
             // 
-            btnHistorico.Location = new Point(281, 220);
+            btnHistorico.Location = new Point(281, 164);
             btnHistorico.Name = "btnHistorico";
             btnHistorico.Size = new Size(212, 70);
             btnHistorico.TabIndex = 3;
@@ -83,11 +84,24 @@
             btnHistorico.MouseEnter += btnHistorico_MouseEnter;
             btnHistorico.MouseLeave += btnHistorico_MouseLeave;
             // 
+            // btnSair
+            // 
+            btnSair.Location = new Point(281, 326);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(212, 70);
+            btnSair.TabIndex = 4;
+            btnSair.Text = "Deslogar";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click_1;
+            btnSair.MouseEnter += btnSair_MouseEnter;
+            btnSair.MouseLeave += btnSair_MouseLeave_1;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSair);
             Controls.Add(btnHistorico);
             Controls.Add(btnPerfil);
             Controls.Add(btnRaking);
@@ -103,5 +117,6 @@
         private Button btnRaking;
         private Button btnPerfil;
         private Button btnHistorico;
+        private Button btnSair;
     }
 }

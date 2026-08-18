@@ -20,21 +20,28 @@ namespace Quiz_Projeto_Integrador.Banco
                     INSERT INTO usuario (Nome, Nickname, Senha, DataDeNascimento)
                     VALUES (@Nome, @Nickname, @Senha, @DataDeNascimento)
                 ",
-                 usuario
+                   new
+                   {
+                       usuario.Nome,
+                       usuario.Nickname,
+                       usuario.Senha,
+                       DataDeNascimento = usuario.DataDeNascimento.ToDateTime(TimeOnly.MinValue)
+                   }
                  );
         }
 
-    public static async Task<Usuario> ObterNickSenha(string nickname, string senha)
+        public static async Task<Usuario> ObterNickSenha(string nickname, string senha)
         {
             var usuario = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Usuario>(
                 @"
                     SELECT
+                      Id,
                       Nickname,
                       Senha
                     FROM
                       usuario
                     WHERE
-                      Nickname = @Nickname
+                      Nickname = @Nickname 
                  ",
                 new
                 {
@@ -59,10 +66,47 @@ namespace Quiz_Projeto_Integrador.Banco
                     Nickname = nickname,
                 });
             return quantidade > 0;
-        }  
-               
+        }
+        public static async Task<int?> SelectIdLogin(string nickname, string senha)
+        {
+            var idUsuario = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<int?>(
+
+                @"
+                  SELECT Id
+                  FROM usuario
+                  WHERE Nickname = @Nickname AND Senha = @Senha
+                 ",
+                     new
+                     {
+                         Nickname = nickname,
+                         Senha = senha
+                     }
+                    ); return idUsuario;
+        }
+        public static async Task<Usuario?> SelectPorId(int idUsuario)
+        {
+            var usuario = await ConexaoBanco.CriarConexao()
+                .QueryFirstOrDefaultAsync<Usuario>(
+                    @"
+
+            SELECT  
+                   Senha, 
+                   Nickname,
+                   Nome,
+                   DataDeNascimento
+            FROM usuario
+            WHERE Id = @IdUsuario
+            ",
+                    new
+                    {
+                        IdUsuario = idUsuario
+                    }
+                );
+
+            return usuario;
 
         }
 
 
     }
+}

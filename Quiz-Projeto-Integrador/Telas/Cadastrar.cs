@@ -25,6 +25,7 @@ namespace Quiz_Projeto_Integrador.Telas
         private async void btnCadastrar_Click(object sender, EventArgs e)
         {
             //Guardar informações
+
             string nome = txtNome.Text;
             string senha = txtSenha.Text;
             string senhaCryptografada = BCrypt.Net.BCrypt.HashPassword(senha, workFactor: 12);
@@ -54,8 +55,8 @@ namespace Quiz_Projeto_Integrador.Telas
          // caso nada esteja errado, manda pro banco de dados
             else
             {
-                DateTime dataDeNascimento = dtpDataDeNascimento.Value;
-                var usuario = new Usuario(senhaCryptografada, nickname, nome, dataDeNascimento);
+                DateOnly dataDeNascimento = DateOnly.FromDateTime(dtpDataDeNascimento.Value);
+                var usuario = new Usuario(senha: senhaCryptografada, nickname: nickname, nome: nome, dataDeNascimento: dataDeNascimento);
 
                 await UsuarioRepositories.Adicionar(usuario);
                 MessageBox.Show("Cadastro realizado", "Nova conta criada", MessageBoxButtons.OK);

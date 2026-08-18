@@ -8,30 +8,38 @@ namespace Quiz_Projeto_Integrador
 {
     public class Usuario
     {
+        public Usuario()
+        {
+        }
+       
         public Usuario(
             string senha,
             string nickname,
             string nome,
-            DateTime dataDeNascimento) 
-        { 
-        Senha = senha;
-        Nickname = nickname;
-        Nome = nome;
-        DataDeNascimento = dataDeNascimento;
+            DateOnly dataDeNascimento)
+        {
+            Senha = senha;
+            Nickname = nickname;
+            Nome = nome;
+            DataDeNascimento = dataDeNascimento;
         }
 
+
         public Usuario(
+            int id,
             string nickname,
             string senha)
         { 
+        Id = id;
         Senha = senha;
         Nickname = nickname;
         }
 
+        public int Id { get; set; }
         public string Senha { get; set; } 
         public string Nickname { get; set;}
         public string Nome { get; set;}
-        public DateTime DataDeNascimento { get;set; }
+        public DateOnly DataDeNascimento { get;set; }
 
         public bool SenhaCorreta(string senhaDigitada)
         {
