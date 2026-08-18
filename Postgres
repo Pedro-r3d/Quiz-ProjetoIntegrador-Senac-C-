@@ -22,8 +22,7 @@ Questao varchar(255) not null,
 Tipo varchar(255) not null,
 Nivel varchar(50) not null,
 Tema varchar(50) not null,
-Pontos int not null,
-foreign key (TipoId) references Alternativas(Id)
+Pontos int not null
 )
 
 create table Alternativas(
