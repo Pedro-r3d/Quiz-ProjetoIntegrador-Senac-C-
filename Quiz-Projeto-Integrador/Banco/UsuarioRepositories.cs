@@ -32,11 +32,8 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
-<<<<<<< HEAD
-        public static async Task<IEnumerable<Usuario>> ObterRanking()
-=======
+
         public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
->>>>>>> 48cef0e2519159dba52fd23f4e3444e81388cc0c
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
