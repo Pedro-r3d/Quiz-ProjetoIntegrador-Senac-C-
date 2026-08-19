@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Quiz_Projeto_Integrador.Dto;
 using Quiz_Projeto_Integrador.Objetos;
 using System;
 using System.Collections.Generic;
@@ -31,11 +32,11 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
-        public static async Task<IEnumerable<Usuario>> ObterTodos()
+        public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
         {
-            var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<Usuario>(
+            var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
-                    select u.nickname, h.pontos, count(r.correta or null), count(r.correta), r.tema, count(r.*) as frequencia
+                    select u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema, count(r.*) as frequencia
                     from usuario u 
                     inner join historico h
                     on u.id = h.usuarioid
