@@ -32,11 +32,15 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
+<<<<<<< HEAD
         public static async Task<IEnumerable<Usuario>> ObterRanking()
+=======
+        public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
+>>>>>>> 48cef0e2519159dba52fd23f4e3444e81388cc0c
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
-                    select u.nickname, h.pontos, count(r.correta or null), count(r.correta), r.tema, count(r.*) as frequencia
+                    select u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema, count(r.*) as frequencia
                     from usuario u 
                     inner join historico h
                     on u.id = h.usuarioid
