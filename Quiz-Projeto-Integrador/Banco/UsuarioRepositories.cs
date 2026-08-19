@@ -40,13 +40,13 @@ namespace Quiz_Projeto_Integrador.Banco
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
-                    select u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema, count(r.*) as frequencia
+                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema, count(r.*) as frequencia
                     from usuario u 
                     inner join historico h
                     on u.id = h.usuarioid
                     inner join registro r
                     on h.id = r.historicoid
-                    group by u.nickname, h.pontos, r.tema
+                    group by u.id, u.nickname, h.pontos, r.tema
                     order by frequencia desc     
                  ");
 

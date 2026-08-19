@@ -1,4 +1,5 @@
 ﻿using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Dto;
 using Quiz_Projeto_Integrador.Objetos;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,9 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             var usuarios = await UsuarioRepositories.ObterRanking();
 
-            dgvUsuarios.DataSource = new BindingList<Usuario>((IList<Usuario>)usuarios.ToList());
+            dgvUsuarios.DataSource = new BindingList<
+                UsuarioRankingDto>((IList<
+                    UsuarioRankingDto>)usuarios.ToList());
 
             dgvUsuarios.SelectionChanged -= dgvUsuarios_SelectionChanged;
 
