@@ -8,23 +8,8 @@ namespace Quiz_Projeto_Integrador.Dto
 {
     public class UsuarioRankingDto
     {
-        public  UsuarioRankingDto(
-            string nickname,
-            int pontos,
-            int corretas,
-            int quantRespostas,
-            string tema,
-            int frequencia          
-            ) 
-        { 
-        Nickname = nickname;
-        Pontos = pontos;
-        Corretas = corretas;
-        QuantRespostas = quantRespostas;
-        Tema = tema;
-        Frequencia = frequencia;
-        }
-
+      
+        public int Id { get; set; } 
         public string Nickname { get; set; }
         public int Pontos { get; set; }
         public int Corretas { get; set; }
@@ -32,7 +17,8 @@ namespace Quiz_Projeto_Integrador.Dto
         public string Tema { get; set; }
         public int Frequencia { get; set; }
 
-
+        
+ 
         
     }
 }
