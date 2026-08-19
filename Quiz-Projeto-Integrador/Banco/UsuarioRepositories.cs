@@ -41,10 +41,8 @@ namespace Quiz_Projeto_Integrador.Banco
                     on u.id = h.usuarioid
                     inner join registro r
                     on h.id = r.historicoid
-                    where u.id = 3
                     group by u.nickname, h.pontos, r.tema
-                    order by frequencia desc
-                    limit 1           
+                    order by frequencia desc     
                  ");
 
             return usuarios;
