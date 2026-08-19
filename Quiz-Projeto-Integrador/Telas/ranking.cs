@@ -32,6 +32,8 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private async void ranking_Load(object sender, EventArgs e)
         {
+            dgvUsuarios.AllowUserToAddRows = false;
+
             var usuarios = await UsuarioRepositories.ObterRanking();
 
             dgvUsuarios.DataSource = new BindingList<
