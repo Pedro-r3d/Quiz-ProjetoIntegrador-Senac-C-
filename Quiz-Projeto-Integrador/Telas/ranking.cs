@@ -70,8 +70,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnVerPerfil_Click(object sender, EventArgs e)
         {
+            int id = (int)dgvUsuarios.SelectedCells[0].Value;
             this.Close();
-            new PerfilDoUsuario(usuarioLogado).ShowDialog();
+            new PerfilDoUsuario(id).ShowDialog();
             this.Show();
         }
     }
