@@ -34,10 +34,10 @@
             label2 = new Label();
             lblPontosTotais = new Label();
             lblPergunta = new Label();
-            btnCorreto = new Button();
-            btnErrado1 = new Button();
-            btnErrado3 = new Button();
-            btnErrado2 = new Button();
+            btn1 = new Button();
+            btn2 = new Button();
+            btn3 = new Button();
+            btn4 = new Button();
             button1 = new Button();
             label3 = new Label();
             lblValorPergunta = new Label();
@@ -100,41 +100,41 @@
             lblPergunta.TabIndex = 5;
             lblPergunta.Text = "(Pergunta)";
             // 
-            // btnCorreto
+            // btn1
             // 
-            btnCorreto.Location = new Point(236, 265);
-            btnCorreto.Name = "btnCorreto";
-            btnCorreto.Size = new Size(141, 59);
-            btnCorreto.TabIndex = 6;
-            btnCorreto.Text = "Correto";
-            btnCorreto.UseVisualStyleBackColor = true;
+            btn1.Location = new Point(236, 265);
+            btn1.Name = "btn1";
+            btn1.Size = new Size(141, 59);
+            btn1.TabIndex = 6;
+            btn1.Text = "Botao1";
+            btn1.UseVisualStyleBackColor = true;
             // 
-            // btnErrado1
+            // btn2
             // 
-            btnErrado1.Location = new Point(419, 265);
-            btnErrado1.Name = "btnErrado1";
-            btnErrado1.Size = new Size(145, 59);
-            btnErrado1.TabIndex = 7;
-            btnErrado1.Text = "Errado";
-            btnErrado1.UseVisualStyleBackColor = true;
+            btn2.Location = new Point(419, 265);
+            btn2.Name = "btn2";
+            btn2.Size = new Size(145, 59);
+            btn2.TabIndex = 7;
+            btn2.Text = "Botao2";
+            btn2.UseVisualStyleBackColor = true;
             // 
-            // btnErrado3
+            // btn3
             // 
-            btnErrado3.Location = new Point(236, 338);
-            btnErrado3.Name = "btnErrado3";
-            btnErrado3.Size = new Size(141, 61);
-            btnErrado3.TabIndex = 8;
-            btnErrado3.Text = "Errado";
-            btnErrado3.UseVisualStyleBackColor = true;
+            btn3.Location = new Point(236, 338);
+            btn3.Name = "btn3";
+            btn3.Size = new Size(141, 61);
+            btn3.TabIndex = 8;
+            btn3.Text = "Botao3";
+            btn3.UseVisualStyleBackColor = true;
             // 
-            // btnErrado2
+            // btn4
             // 
-            btnErrado2.Location = new Point(419, 338);
-            btnErrado2.Name = "btnErrado2";
-            btnErrado2.Size = new Size(145, 61);
-            btnErrado2.TabIndex = 9;
-            btnErrado2.Text = "Errado";
-            btnErrado2.UseVisualStyleBackColor = true;
+            btn4.Location = new Point(419, 338);
+            btn4.Name = "btn4";
+            btn4.Size = new Size(145, 61);
+            btn4.TabIndex = 9;
+            btn4.Text = "Botao4";
+            btn4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -173,10 +173,10 @@
             Controls.Add(lblValorPergunta);
             Controls.Add(label3);
             Controls.Add(button1);
-            Controls.Add(btnErrado2);
-            Controls.Add(btnErrado3);
-            Controls.Add(btnErrado1);
-            Controls.Add(btnCorreto);
+            Controls.Add(btn4);
+            Controls.Add(btn3);
+            Controls.Add(btn2);
+            Controls.Add(btn1);
             Controls.Add(lblPergunta);
             Controls.Add(lblPontosTotais);
             Controls.Add(label2);
@@ -197,10 +197,10 @@
         private Label label2;
         private Label lblPontosTotais;
         private Label lblPergunta;
-        private Button btnCorreto;
-        private Button btnErrado1;
-        private Button btnErrado3;
-        private Button btnErrado2;
+        private Button btn1;
+        private Button btn2;
+        private Button btn3;
+        private Button btn4;
         private Button button1;
         private Label label3;
         private Label lblValorPergunta;
