@@ -10,7 +10,6 @@
         public int Corretas { get; set; }
         public int QuantRespostas { get; set; }
         public string Tema { get; set; }
-        public int Frequencia { get; set; }
 
     }
 }

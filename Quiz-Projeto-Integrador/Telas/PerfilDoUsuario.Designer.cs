@@ -42,7 +42,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
+            lblTema = new Label();
             label5 = new Label();
             SuspendLayout();
             // 
@@ -175,15 +175,15 @@
             label3.Size = new Size(100, 23);
             label3.TabIndex = 21;
             // 
-            // label4
+            // lblTema
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(15, 371);
-            label4.Name = "label4";
-            label4.Size = new Size(172, 25);
-            label4.TabIndex = 20;
-            label4.Text = "cccccccccccccccccccc";
+            lblTema.AutoSize = true;
+            lblTema.BackColor = SystemColors.ActiveCaption;
+            lblTema.Location = new Point(15, 371);
+            lblTema.Name = "lblTema";
+            lblTema.Size = new Size(172, 25);
+            lblTema.TabIndex = 20;
+            lblTema.Text = "cccccccccccccccccccc";
             // 
             // label5
             // 
@@ -201,7 +201,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label5);
-            Controls.Add(label4);
+            Controls.Add(lblTema);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -238,7 +238,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
+        private Label lblTema;
         private Label label5;
     }
 }

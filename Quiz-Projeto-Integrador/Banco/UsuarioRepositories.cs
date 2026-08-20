@@ -32,19 +32,18 @@ namespace Quiz_Projeto_Integrador.Banco
                  );
         }
 
-
         public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
-                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema, count(r.*) as frequencia
+                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema
                     from usuario u 
                     inner join historico h
                     on u.id = h.usuarioid
                     inner join registro r
                     on h.id = r.historicoid
                     group by u.id, u.nickname, h.pontos, r.tema
-                    order by frequencia desc     
+                    order by pontos desc     
                  ");
 
             return usuarios;
@@ -103,19 +102,19 @@ namespace Quiz_Projeto_Integrador.Banco
                      }
                     ); return idUsuario;
         }
-        public static async Task<Usuario?> SelectPorId(int idUsuario)
+        public static async Task<UsuarioRankingDto?> SelectPorId(int idUsuario)
         {
             var usuario = await ConexaoBanco.CriarConexao()
-                .QueryFirstOrDefaultAsync<Usuario>(
+                .QueryFirstOrDefaultAsync<UsuarioRankingDto>(
                     @"
-
-            SELECT  
-                   Senha, 
-                   Nickname,
-                   Nome,
-                   DataDeNascimento
-            FROM usuario
-            WHERE Id = @IdUsuario
+                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema
+                    from usuario u 
+                    inner join historico h
+                    on u.id = h.usuarioid
+                    inner join registro r
+                    on h.id = r.historicoid
+                    where u.id = @IdUsuario
+                    group by u.id, u.nickname, h.pontos, r.tema
             ",
                     new
                     {

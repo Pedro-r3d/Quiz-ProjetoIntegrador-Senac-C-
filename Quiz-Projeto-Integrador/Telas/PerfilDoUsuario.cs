@@ -26,15 +26,17 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             var usuario = await UsuarioRepositories.SelectPorId(usuarioLogado);
 
-
             if (usuario == null)
             {
                 MessageBox.Show("Usuário não encontrado.");
                 return;
             }
 
-
+            lblPontos.Text = usuario.Pontos.ToString();
+            lblRespostas.Text = usuario.QuantRespostas.ToString();
+            lblAcertos.Text = usuario.Corretas.ToString();
             lblNickname.Text = usuario.Nickname;
+            lblTema.Text = usuario.Tema;
         }
 
         private void label1_Click(object sender, EventArgs e)
