@@ -28,5 +28,10 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             new Cadastrar().ShowDialog();
         }
+
+        private void TelaInicial_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

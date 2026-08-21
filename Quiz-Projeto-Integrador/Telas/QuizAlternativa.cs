@@ -16,5 +16,10 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             InitializeComponent();
         }
+
+        private void QuizAlternativa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

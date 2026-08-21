@@ -160,6 +160,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Cadastrar";
             Text = "Cadastro usuario";
+            Load += Cadastrar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

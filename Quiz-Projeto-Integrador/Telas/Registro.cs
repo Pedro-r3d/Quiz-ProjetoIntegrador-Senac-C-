@@ -21,5 +21,10 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             this.Close();
         }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

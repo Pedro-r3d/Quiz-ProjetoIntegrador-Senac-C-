@@ -63,6 +63,7 @@
             Controls.Add(button1);
             Name = "TelaInicial";
             Text = "TelaInicial";
+            Load += TelaInicial_Load;
             ResumeLayout(false);
         }
 
