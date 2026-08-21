@@ -15,6 +15,8 @@ namespace Quiz_Projeto_Integrador.Telas
         public QuizAlternativa()
         {
             InitializeComponent();
+
+
         }
 
         private void QuizAlternativa_Load(object sender, EventArgs e)

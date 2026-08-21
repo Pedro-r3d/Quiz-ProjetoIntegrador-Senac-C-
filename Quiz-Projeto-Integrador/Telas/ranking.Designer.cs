@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvUsuarios = new DataGridView();
             btnVerPerfil = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(796, 366);
-            dataGridView1.TabIndex = 0;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(3, 3);
+            dgvUsuarios.MultiSelect = false;
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.RowHeadersWidth = 62;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsuarios.Size = new Size(796, 366);
+            dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnVerPerfil
             // 
@@ -50,6 +54,7 @@
             btnVerPerfil.TabIndex = 1;
             btnVerPerfil.Text = "Ver perfil";
             btnVerPerfil.UseVisualStyleBackColor = true;
+            btnVerPerfil.Click += btnVerPerfil_Click;
             // 
             // ranking
             // 
@@ -57,17 +62,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVerPerfil);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvUsuarios);
             Name = "ranking";
             Text = "ranking";
             Load += ranking_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuarios;
         private Button btnVerPerfil;
     }
 }

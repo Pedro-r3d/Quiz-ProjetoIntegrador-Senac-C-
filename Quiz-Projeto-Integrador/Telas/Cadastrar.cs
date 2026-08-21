@@ -1,5 +1,6 @@
 ﻿using BCrypt.Net;
 using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Objetos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

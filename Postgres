@@ -1,3 +1,11 @@
+create table usuario(
+Id serial primary key,
+Nome varchar(255) not null,
+Nickname varchar(30) not null,
+Senha varchar(250) not null,
+DataDeNascimento date not null
+)
+
 create table Historico (
 Id serial primary key,
 UsuarioId int not null,
@@ -20,6 +28,7 @@ create table Pergunta(
 Id serial primary key,
 Questao varchar(255) not null,
 Tipo varchar(255) not null,
+Resposta varchar(255) not null,
 Nivel varchar(50) not null,
 Tema varchar(50) not null,
 Pontos int not null
@@ -28,17 +37,9 @@ Pontos int not null
 create table Alternativas(
 Id serial primary key,
 PerguntaId int not null,
-Correta varchar(255) not null,
 EscolhaA varchar(255) not null,
 EscolhaB varchar(255) not null,
 EscolhaC varchar(255) not null,
-foreign key (PerguntaId) references Pergunta(Id)
-)
-
-create table VerdadeiroOuFalso(
-Id serial primary key,
-PerguntaId int not null,
-Correta varchar(255) not null,
-Errada varchar(255) not null,
+EscolhaD varchar(255) not null,
 foreign key (PerguntaId) references Pergunta(Id)
 )
