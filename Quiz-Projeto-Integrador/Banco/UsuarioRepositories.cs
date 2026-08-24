@@ -126,19 +126,19 @@ namespace Quiz_Projeto_Integrador.Banco
 
         }
 
-        public static async Task<Alternativas> PegarPerguntaAlternativas(int id)
+        public static async Task<Alternativas> PegarPerguntaAlternativas()
         {
-            var pergunta = await ConexaoBanco.CriarConexao().QueryFirstOrDefault<Alternativas>(
+            var pergunta = await ConexaoBanco.CriarConexao().
+                QueryAsync<Alternativas>(
                 @"
-                SELECT p.Pontos, a.Correta, a.EscolhaA, a.EscolhaB, a.EscolhaC, aEscolhaD
+                SELECT p.Pontos, a.Correta, a.EscolhaA, a.EscolhaB, a.EscolhaC, a.EscolhaD
                 FROM
                 Alternativas a
                 INNER JOIN Pergunta p
                 ON a.PerguntaId = p.Id
-                ",
+                "
                 );
-            return pergunta;
-
+            return (Alternativas)pergunta;
         }
 
 

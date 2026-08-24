@@ -1,8 +1,10 @@
-﻿namespace Quiz_Projeto_Integrador.Objetos
+﻿namespace Quiz_Projeto_Integrador.Dto
 {
     public class Alternativas
     {
+        public int Id { get; set; }
         public int Pontos {  get; set; }
+        public string Pergunta { get; set; }
         public string Correta { get; set; }
         public string EscolhaA { get; set; }
         public string EscolhaB { get; set; }

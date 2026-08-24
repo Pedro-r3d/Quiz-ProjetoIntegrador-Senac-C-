@@ -185,6 +185,7 @@
             Controls.Add(lblNickname);
             Name = "QuizAlternativa";
             Text = "Quiz";
+            Load += QuizAlternativa_Load;
             ResumeLayout(false);
             PerformLayout();
         }
