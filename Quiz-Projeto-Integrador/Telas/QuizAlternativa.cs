@@ -21,6 +21,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
 
         }
+<<<<<<< HEAD
         private List<Alternativas> perguntas;
         private int perguntaAtual = 1;
         private int pontos = 0;
@@ -33,6 +34,12 @@ namespace Quiz_Projeto_Integrador.Telas
         }
         private void QuizAlternativa_Load(object sender, EventArgs e)
         {
+=======
+
+        private void QuizAlternativa_Load(object sender, EventArgs e)
+        {
+
+>>>>>>> 53993552a35837889dc986d687c4cfcfeb8fadad
         }
     }
 }

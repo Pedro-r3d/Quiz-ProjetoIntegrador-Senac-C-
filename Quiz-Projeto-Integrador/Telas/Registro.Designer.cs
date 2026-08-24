@@ -98,6 +98,7 @@
             Controls.Add(dataGridView1);
             Name = "Registro";
             Text = "Registro";
+            Load += Registro_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -33,27 +33,27 @@ namespace Quiz_Projeto_Integrador.Telas
             string nickname = txtNickname.Text;
 
             bool existeNick = await UsuarioRepositories.ExisteNickname(nickname);
-            if (existeNick) 
+            if (existeNick)
             {
                 MessageBox.Show("Esse nickname já está em uso.");
                 return;
             }
 
-       //Verificar se campos foram preenchidos
+            //Verificar se campos foram preenchidos
             if (txtNome.Text == "" || txtSenha.Text == "" || txtNickname.Text == "")
             {
                 MessageBox.Show("Informações não preenchidas", "Cadastro não realizado", MessageBoxButtons.OK);
                 return;
-            } 
-        
-        // Verificar se senha e confirmar senha são iguais
-            if(txtConfirmarSenha.Text != txtSenha.Text)
+            }
+
+            // Verificar se senha e confirmar senha são iguais
+            if (txtConfirmarSenha.Text != txtSenha.Text)
             {
                 MessageBox.Show("Senhas diferentes", "Confirmar senha diferente", MessageBoxButtons.OK);
                 return;
             }
 
-         // caso nada esteja errado, manda pro banco de dados
+            // caso nada esteja errado, manda pro banco de dados
             else
             {
                 DateOnly dataDeNascimento = DateOnly.FromDateTime(dtpDataDeNascimento.Value);
@@ -63,7 +63,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 MessageBox.Show("Cadastro realizado", "Nova conta criada", MessageBoxButtons.OK);
                 this.Close();
             }
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,6 +91,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
-       
+        private void Cadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
