@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvHistorico = new DataGridView();
             btnSelecionar = new Button();
             btnVoltar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistorico).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvHistorico
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(1, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(796, 351);
-            dataGridView1.TabIndex = 0;
+            dgvHistorico.AllowUserToAddRows = false;
+            dgvHistorico.AllowUserToDeleteRows = false;
+            dgvHistorico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvHistorico.Location = new Point(1, 3);
+            dgvHistorico.Name = "dgvHistorico";
+            dgvHistorico.ReadOnly = true;
+            dgvHistorico.RowHeadersWidth = 62;
+            dgvHistorico.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvHistorico.Size = new Size(796, 351);
+            dgvHistorico.TabIndex = 0;
             // 
             // btnSelecionar
             // 
@@ -52,6 +56,7 @@
             btnSelecionar.TabIndex = 1;
             btnSelecionar.Text = "Selecionar";
             btnSelecionar.UseVisualStyleBackColor = true;
+            btnSelecionar.Click += btnSelecionar_Click;
             // 
             // btnVoltar
             // 
@@ -71,17 +76,17 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnVoltar);
             Controls.Add(btnSelecionar);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvHistorico);
             Name = "Historico";
             Text = "Historico";
             Load += Historico_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvHistorico).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvHistorico;
         private Button btnSelecionar;
         private Button btnVoltar;
     }

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Objetos;
 
 namespace Quiz_Projeto_Integrador.Telas
 {
@@ -22,13 +15,15 @@ namespace Quiz_Projeto_Integrador.Telas
             this.Close();
         }
 
-        private void Historico_Load(object sender, EventArgs e)
+        public async void Historico_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-=======
+            var historico = await UsuarioRepositories.PegarHistorico();
+            dgvHistorico.DataSource = historico;
+        }
 
->>>>>>> f3650fecdb249c2df49c6ecf1e29a3cdc1b761a5
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

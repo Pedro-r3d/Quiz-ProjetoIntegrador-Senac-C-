@@ -142,5 +142,36 @@ namespace Quiz_Projeto_Integrador.Banco
         }
 
 
+        public static async Task<IEnumerable<Historico>> PegarHistorico()
+        {
+            var historico = await ConexaoBanco.CriarConexao().QueryAsync<Historico>(
+                @"
+                SELECT 
+                    Id,  
+                    DataDoQuiz, 
+                    Pontos
+                FROM
+                    Historico
+                "
+                );
+            return historico;
+        }
+
+
+        public static async Task<IEnumerable<Registro>> PegarRegistro()
+        {
+            var registro = await ConexaoBanco.CriarConexao().QueryAsync<Registro>(
+                @"
+                SELECT
+                    Pergunta,
+                    Tema,
+                    Correta,
+                    Valor
+                FROM
+                    Registro
+                "
+                );
+            return registro;
+        }
     }
 }
