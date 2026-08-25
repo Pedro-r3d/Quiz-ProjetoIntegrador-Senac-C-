@@ -40,6 +40,7 @@ namespace Quiz_Projeto_Integrador.Telas
         }
         private async void QuizAlternativa_Load(object sender, EventArgs e)
         {
+
             perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
             perguntaAtual = 0;
             MostrarPergunta();
