@@ -34,13 +34,15 @@
             label2 = new Label();
             lblPontosTotais = new Label();
             lblPergunta = new Label();
-            btn1 = new Button();
-            btn2 = new Button();
-            btn3 = new Button();
-            btn4 = new Button();
             button1 = new Button();
             label3 = new Label();
             lblValorPergunta = new Label();
+            rb1 = new RadioButton();
+            groupBox1 = new GroupBox();
+            rb3 = new RadioButton();
+            rb2 = new RadioButton();
+            rb4 = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNickname
@@ -94,47 +96,15 @@
             // 
             lblPergunta.AutoSize = true;
             lblPergunta.Font = new Font("Segoe UI", 15F);
-            lblPergunta.Location = new Point(324, 221);
+            lblPergunta.ImageAlign = ContentAlignment.MiddleLeft;
+            lblPergunta.Location = new Point(236, 120);
+            lblPergunta.MaximumSize = new Size(400, 700);
             lblPergunta.Name = "lblPergunta";
+            lblPergunta.RightToLeft = RightToLeft.No;
             lblPergunta.Size = new Size(155, 41);
             lblPergunta.TabIndex = 5;
             lblPergunta.Text = "(Pergunta)";
-            // 
-            // btn1
-            // 
-            btn1.Location = new Point(236, 265);
-            btn1.Name = "btn1";
-            btn1.Size = new Size(141, 59);
-            btn1.TabIndex = 6;
-            btn1.Text = "Botao1";
-            btn1.UseVisualStyleBackColor = true;
-            // 
-            // btn2
-            // 
-            btn2.Location = new Point(419, 265);
-            btn2.Name = "btn2";
-            btn2.Size = new Size(145, 59);
-            btn2.TabIndex = 7;
-            btn2.Text = "Botao2";
-            btn2.UseVisualStyleBackColor = true;
-            // 
-            // btn3
-            // 
-            btn3.Location = new Point(236, 338);
-            btn3.Name = "btn3";
-            btn3.Size = new Size(141, 61);
-            btn3.TabIndex = 8;
-            btn3.Text = "Botao3";
-            btn3.UseVisualStyleBackColor = true;
-            // 
-            // btn4
-            // 
-            btn4.Location = new Point(419, 338);
-            btn4.Name = "btn4";
-            btn4.Size = new Size(145, 61);
-            btn4.TabIndex = 9;
-            btn4.Text = "Botao4";
-            btn4.UseVisualStyleBackColor = true;
+            lblPergunta.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -144,12 +114,13 @@
             button1.TabIndex = 10;
             button1.Text = "Avançar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(3, 142);
+            label3.Location = new Point(279, 9);
             label3.Name = "label3";
             label3.Size = new Size(262, 41);
             label3.TabIndex = 11;
@@ -159,24 +130,77 @@
             // 
             lblValorPergunta.AutoSize = true;
             lblValorPergunta.Font = new Font("Segoe UI", 12F);
-            lblValorPergunta.Location = new Point(84, 195);
+            lblValorPergunta.Location = new Point(363, 50);
             lblValorPergunta.Name = "lblValorPergunta";
             lblValorPergunta.Size = new Size(40, 32);
             lblValorPergunta.TabIndex = 12;
             lblValorPergunta.Text = "00";
+            // 
+            // rb1
+            // 
+            rb1.AutoSize = true;
+            rb1.Location = new Point(6, 13);
+            rb1.Name = "rb1";
+            rb1.Size = new Size(141, 29);
+            rb1.TabIndex = 13;
+            rb1.TabStop = true;
+            rb1.Text = "radioButton1";
+            rb1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rb3);
+            groupBox1.Controls.Add(rb2);
+            groupBox1.Controls.Add(rb4);
+            groupBox1.Controls.Add(rb1);
+            groupBox1.Location = new Point(236, 264);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(334, 147);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            // 
+            // rb3
+            // 
+            rb3.AutoSize = true;
+            rb3.Location = new Point(6, 84);
+            rb3.Name = "rb3";
+            rb3.Size = new Size(141, 29);
+            rb3.TabIndex = 15;
+            rb3.TabStop = true;
+            rb3.Text = "radioButton3";
+            rb3.UseVisualStyleBackColor = true;
+            // 
+            // rb2
+            // 
+            rb2.AutoSize = true;
+            rb2.Location = new Point(175, 13);
+            rb2.Name = "rb2";
+            rb2.Size = new Size(141, 29);
+            rb2.TabIndex = 14;
+            rb2.TabStop = true;
+            rb2.Text = "radioButton2";
+            rb2.UseVisualStyleBackColor = true;
+            // 
+            // rb4
+            // 
+            rb4.AutoSize = true;
+            rb4.Location = new Point(175, 84);
+            rb4.Name = "rb4";
+            rb4.Size = new Size(141, 29);
+            rb4.TabIndex = 16;
+            rb4.TabStop = true;
+            rb4.Text = "radioButton4";
+            rb4.UseVisualStyleBackColor = true;
             // 
             // QuizAlternativa
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox1);
             Controls.Add(lblValorPergunta);
             Controls.Add(label3);
             Controls.Add(button1);
-            Controls.Add(btn4);
-            Controls.Add(btn3);
-            Controls.Add(btn2);
-            Controls.Add(btn1);
             Controls.Add(lblPergunta);
             Controls.Add(lblPontosTotais);
             Controls.Add(label2);
@@ -186,6 +210,8 @@
             Name = "QuizAlternativa";
             Text = "Quiz";
             Load += QuizAlternativa_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,12 +224,13 @@
         private Label label2;
         private Label lblPontosTotais;
         private Label lblPergunta;
-        private Button btn1;
-        private Button btn2;
-        private Button btn3;
-        private Button btn4;
         private Button button1;
         private Label label3;
         private Label lblValorPergunta;
+        private RadioButton rb1;
+        private GroupBox groupBox1;
+        private RadioButton rb4;
+        private RadioButton rb3;
+        private RadioButton rb2;
     }
 }
