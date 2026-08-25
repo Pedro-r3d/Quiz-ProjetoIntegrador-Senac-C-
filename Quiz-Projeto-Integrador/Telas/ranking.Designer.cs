@@ -64,6 +64,7 @@
             Controls.Add(btnVerPerfil);
             Controls.Add(dgvUsuarios);
             Name = "ranking";
+            ShowIcon = false;
             Text = "ranking";
             Load += ranking_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();

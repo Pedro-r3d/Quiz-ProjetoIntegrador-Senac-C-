@@ -31,7 +31,7 @@ namespace Quiz_Projeto_Integrador.Banco
                    }
                  );
         }
-
+        
         public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
