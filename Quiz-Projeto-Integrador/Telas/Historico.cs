@@ -24,11 +24,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void Historico_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> f3650fecdb249c2df49c6ecf1e29a3cdc1b761a5
         }
     }
 }

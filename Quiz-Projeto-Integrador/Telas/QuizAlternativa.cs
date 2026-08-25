@@ -21,25 +21,70 @@ namespace Quiz_Projeto_Integrador.Telas
 
 
         }
-<<<<<<< HEAD
         private List<Alternativas> perguntas;
-        private int perguntaAtual = 1;
+        private int perguntaAtual = 0;
         private int pontos = 0;
 
         private void MostrarPergunta()
         {
             var pergunta = perguntas[perguntaAtual];
 
-            lblPergunta.Text = pergunta.Pergunta;
+            lblPergunta.Text = pergunta.Questao;
+            lblPontosTotais.Text = pontos.ToString();
+
+            rb1.Text = pergunta.EscolhaA;
+            rb2.Text = pergunta.EscolhaB;
+            rb3.Text = pergunta.EscolhaC;
+            rb4.Text = pergunta.EscolhaD;
+
         }
-        private void QuizAlternativa_Load(object sender, EventArgs e)
+        private async void QuizAlternativa_Load(object sender, EventArgs e)
         {
-=======
+            perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
+            perguntaAtual = 0;
+            MostrarPergunta();
+        }
 
-        private void QuizAlternativa_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            var pergunta = perguntas[perguntaAtual];
 
->>>>>>> 53993552a35837889dc986d687c4cfcfeb8fadad
+            string respostaEscolhida = "";
+
+            if (rb1.Checked)
+            {
+                respostaEscolhida = rb1.Text;
+            }
+            else if (rb2.Checked)
+            {
+                respostaEscolhida = rb2.Text;
+            }
+            else if (rb3.Checked)
+            {
+                respostaEscolhida = rb3.Text;
+            }
+            else if (rb4.Checked) 
+            {
+                respostaEscolhida = rb4.Text;
+            }
+            else
+            {
+                MessageBox.Show("Escolha uma alternativa.");
+                return;
+            }
+
+
+            if (respostaEscolhida == pergunta.Resposta)
+            {
+                pontos += pergunta.Pontos;
+                MessageBox.Show("Resposta correta");
+            }
+            else
+            {
+                MessageBox.Show("Resposta errada");
+            }
+            perguntaAtual++;
+            MostrarPergunta();
         }
     }
 }

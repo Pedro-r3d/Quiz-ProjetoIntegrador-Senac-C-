@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public int Pontos {  get; set; }
-        public string Pergunta { get; set; }
-        public string Correta { get; set; }
+        public string Resposta { get; set; }
+        public string Questao { get; set; }
         public string EscolhaA { get; set; }
         public string EscolhaB { get; set; }
         public string EscolhaC { get; set; }
