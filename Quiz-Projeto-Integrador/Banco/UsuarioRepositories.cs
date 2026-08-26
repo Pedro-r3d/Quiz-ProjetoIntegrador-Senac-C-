@@ -158,7 +158,7 @@ namespace Quiz_Projeto_Integrador.Banco
         }
 
 
-        public static async Task<IEnumerable<Registro>> PegarRegistro()
+        public static async Task<IEnumerable<Registro>> PegarRegistro(int Id)
         {
             var registro = await ConexaoBanco.CriarConexao().QueryAsync<Registro>(
                 @"
@@ -169,9 +169,40 @@ namespace Quiz_Projeto_Integrador.Banco
                     Valor
                 FROM
                     Registro
-                "
+                WHERE
+                    HistoricoId = @Id
+                ",
+                new
+                {
+                    Id = Id
+                }
                 );
             return registro;
+        }
+
+
+        public static async Task<Registro>PegarIdRegistro(int quizId)
+        {
+            var registroInfo = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Registro>(
+                @"
+                SELECT
+                    Id,
+                    HistoricoId,
+                    Pergunta,
+                    Tema,
+                    Correta,
+                    Valor
+                FROM
+                    Registro
+                WHERE
+                    HistoricoId = @quizId
+                ",
+                new
+                {
+                    QuizId = quizId
+                }
+                );
+            return registroInfo;
         }
     }
 }

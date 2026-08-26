@@ -11,4 +11,5 @@
         public string EscolhaC { get; set; }
         public string EscolhaD { get; set; }
     }
+
 }

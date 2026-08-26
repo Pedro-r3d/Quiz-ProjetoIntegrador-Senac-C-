@@ -21,9 +21,14 @@ namespace Quiz_Projeto_Integrador.Telas
             dgvHistorico.DataSource = historico;
         }
 
-        private void btnSelecionar_Click(object sender, EventArgs e)
+        private async void btnSelecionar_Click(object sender, EventArgs e)
         {
-
+            int quizId = (int)dgvHistorico.SelectedCells[0].Value;
+            var Registro = await UsuarioRepositories.PegarIdRegistro(quizId);
+            int id = Registro.HistoricoId;
+            this.Hide();
+            new Registro(id).ShowDialog();
+            this.Show();
         }
     }
 }

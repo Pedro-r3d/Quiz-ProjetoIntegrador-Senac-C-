@@ -12,7 +12,7 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class Registro : Form
     {
-        public Registro()
+        public Registro(int Id)
         {
             InitializeComponent();
         }
