@@ -254,11 +254,21 @@ namespace Quiz_Projeto_Integrador.Banco
         }
 
 
-        public static async Task<Registro>PegarRegistro(int id)
+        public static async Task<IEnumerable<RegistroDto>>PegarRegistro(int id)
         {
-            var registro = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Registro>(
+            var registro = await ConexaoBanco.CriarConexao().QueryAsync<RegistroDto>(
                 @"
                 SELECT
+                    Id,
+                    HistoricoId,
+                    Pergunta,
+                    Tema,
+                    Correta,
+                    Valor
+                FROM
+                    Registro
+                WHERE
+                    HistoricoId = @Id
                 ",
                 new
                 {

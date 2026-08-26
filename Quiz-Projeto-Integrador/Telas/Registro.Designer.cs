@@ -38,9 +38,14 @@
             // 
             // dgvRegistro
             // 
+            dgvRegistro.AllowUserToAddRows = false;
+            dgvRegistro.AllowUserToDeleteRows = false;
+            dgvRegistro.AllowUserToResizeColumns = false;
+            dgvRegistro.AllowUserToResizeRows = false;
             dgvRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRegistro.Location = new Point(159, 12);
             dgvRegistro.Name = "dgvRegistro";
+            dgvRegistro.ReadOnly = true;
             dgvRegistro.RowHeadersWidth = 62;
             dgvRegistro.Size = new Size(629, 426);
             dgvRegistro.TabIndex = 0;

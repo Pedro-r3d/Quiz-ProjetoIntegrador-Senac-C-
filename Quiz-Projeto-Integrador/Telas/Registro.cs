@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class Registro : Form
     {
-        public Registro(int Id)
+        public int IdHistorico {  get; set; }
+
+        public Registro(int idHistorico)
         {
             InitializeComponent();
+
+            this.IdHistorico = idHistorico;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -22,9 +28,11 @@ namespace Quiz_Projeto_Integrador.Telas
             this.Close();
         }
 
-        private void Registro_Load(object sender, EventArgs e)
+        private async void Registro_Load(object sender, EventArgs e)
         {
-            dgvRegistro.DataSource = new 
+            var registro = await UsuarioRepositories.PegarRegistro(IdHistorico);
+            dgvRegistro.DataSource = new BindingList<RegistroDto>((IList<RegistroDto>)registro.ToList());
+
         }
     }
 }
