@@ -36,13 +36,27 @@ namespace Quiz_Projeto_Integrador.Banco
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
                 @"
-                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema
-                    from usuario u 
-                    inner join historico h
+                    select u.id, u.nickname,COALESCE((SELECT SUM(h2.pontos) FROM historico h2 WHERE h2.usuarioid = u.id), 0) AS pontos, count(r.id) FILTER ( WHERE r.correta = TRUE) AS corretas, count(r.id) AS quantRespostas, (
+
+                    SELECT r2.tema
+                    FROM registro r2
+                    inner join historico h2
+                        ON h2.id = r2.Historicoid
+                    WHERE h2.usuarioid = u.id   
+                    GROUP BY r2.tema
+                    ORDER BY
+                        COUNT(*) FILTER (
+                        WHERE r2.correta = TRUE 
+                            ) DESC,
+                        COUNT(*) DESC
+                        LIMIT 1
+) AS tema
+                    FROM usuario u 
+                    LEFT join historico h
                     on u.id = h.usuarioid
-                    inner join registro r
+                    LEFT join registro r
                     on h.id = r.historicoid
-                    group by u.id, u.nickname, h.pontos, r.tema
+                    group by u.id, u.nickname
                     order by pontos desc     
                  ");
 
@@ -167,16 +181,17 @@ namespace Quiz_Projeto_Integrador.Banco
             return historico;
         }
 
-
-
         public static async Task<int> CriarHistorico(int usuarioId)        {
             var historicoId = await ConexaoBanco.CriarConexao()
-                .QuerySingleAsync<int>(
+                .QueryFirstOrDefaultAsync<int>(
                     @"
             INSERT INTO Historico
                 (UsuarioId, DataDoQuiz, Pontos)
-            VALUES
-                (@UsuarioId, @DataDoQuiz, 0)
+            SELECT
+                @UsuarioId, @DataDoQuiz, 0
+            WHERE EXISTS (
+                     SELECT 1 FROM Usuario WHERE Id = @UsuarioId
+                     )
             RETURNING Id
             ",
                     new
@@ -223,9 +238,7 @@ namespace Quiz_Projeto_Integrador.Banco
         }
         
     );
-
-
-              
+          
         }
 
 
