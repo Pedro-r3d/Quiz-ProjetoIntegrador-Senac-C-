@@ -252,5 +252,20 @@ namespace Quiz_Projeto_Integrador.Banco
                 );
             return registroInfo;
         }
+
+
+        public static async Task<Registro>PegarRegistro(int id)
+        {
+            var registro = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Registro>(
+                @"
+                SELECT
+                ",
+                new
+                {
+                    Id = id
+                }
+                );
+            return registro;
+        }
     }
 }
