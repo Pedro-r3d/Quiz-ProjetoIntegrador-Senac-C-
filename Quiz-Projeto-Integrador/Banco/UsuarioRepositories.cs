@@ -167,13 +167,9 @@ namespace Quiz_Projeto_Integrador.Banco
             return historico;
         }
 
-<<<<<<< HEAD
 
-        public static async Task<IEnumerable<Registro>> PegarRegistro(int Id)
-=======
-        public static async Task<int> CriarHistorico(int usuarioId)
->>>>>>> 2ad18d0087fea5472fb91b41e1531eb3d4d0ed94
-        {
+
+        public static async Task<int> CriarHistorico(int usuarioId)        {
             var historicoId = await ConexaoBanco.CriarConexao()
                 .QuerySingleAsync<int>(
                     @"
@@ -195,26 +191,11 @@ namespace Quiz_Projeto_Integrador.Banco
         {
             await ConexaoBanco.CriarConexao().ExecuteAsync(
                 @"
-<<<<<<< HEAD
-                SELECT
-                    Pergunta,
-                    Tema,
-                    Correta,
-                    Valor
-                FROM
-                    Registro
-                WHERE
-                    HistoricoId = @Id
-                ",
-                new
-                {
-                    Id = Id
-=======
+              
                      INSERT INTO Registro
                             (HistoricoId, Pergunta, Tema, Correta, Valor)
                      VALUES 
                             (@HistoricoId, @Pergunta, @Tema, @Correta, @Valor)
-
                     ",
                 new
                 {
@@ -223,7 +204,6 @@ namespace Quiz_Projeto_Integrador.Banco
                     Tema = tema,
                     Correta = correta,
                     Valor = valor
->>>>>>> 2ad18d0087fea5472fb91b41e1531eb3d4d0ed94
                 }
                 );
         }
