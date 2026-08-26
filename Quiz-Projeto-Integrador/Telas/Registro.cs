@@ -24,7 +24,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void Registro_Load(object sender, EventArgs e)
         {
-
+            dgvRegistro.DataSource = new 
         }
     }
 }

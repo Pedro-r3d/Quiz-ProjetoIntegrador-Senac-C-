@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvRegistro = new DataGridView();
             lblQuiz = new Label();
             label1 = new Label();
             label2 = new Label();
             btnVoltar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistro).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvRegistro
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(159, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(629, 426);
-            dataGridView1.TabIndex = 0;
+            dgvRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistro.Location = new Point(159, 12);
+            dgvRegistro.Name = "dgvRegistro";
+            dgvRegistro.RowHeadersWidth = 62;
+            dgvRegistro.Size = new Size(629, 426);
+            dgvRegistro.TabIndex = 0;
             // 
             // lblQuiz
             // 
@@ -95,18 +95,18 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lblQuiz);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvRegistro);
             Name = "Registro";
             Text = "Registro";
             Load += Registro_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvRegistro;
         private Label lblQuiz;
         private Label label1;
         private Label label2;
