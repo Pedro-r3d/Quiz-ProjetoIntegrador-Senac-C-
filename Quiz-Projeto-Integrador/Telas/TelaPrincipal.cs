@@ -24,13 +24,13 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnQuiz_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new QuizAlternativa().ShowDialog();
+            new QuizAlternativa(usuarioLogado).ShowDialog();
             this.Show();
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-         
+
             this.Hide();
             new PerfilDoUsuario(usuarioLogado).ShowDialog();
             this.Show();
@@ -98,7 +98,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void btnSair_MouseEnter(object sender, EventArgs e)
@@ -111,6 +111,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -25,6 +25,11 @@ namespace Quiz_Projeto_Integrador.Telas
         {
 
         }
+
+        private void dgvHistorico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
     
