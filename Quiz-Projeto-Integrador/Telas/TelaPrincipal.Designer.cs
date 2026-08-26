@@ -108,6 +108,7 @@
             Controls.Add(btnQuiz);
             Name = "TelaPrincipal";
             Text = "TelaPrincipal";
+            Load += TelaPrincipal_Load;
             ResumeLayout(false);
         }
 

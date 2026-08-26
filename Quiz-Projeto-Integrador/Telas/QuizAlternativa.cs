@@ -13,13 +13,18 @@ using System.Windows.Forms;
 
 namespace Quiz_Projeto_Integrador.Telas
 {
+    
     public partial class QuizAlternativa : Form
     {
-        public QuizAlternativa()
+        private int usuarioLogado;
+        private int historicoId;
+
+
+        public QuizAlternativa(int idUsuario)
         {
             InitializeComponent();
 
-
+            usuarioLogado = idUsuario;
         }
         private List<Alternativas> perguntas;
         private int perguntaAtual = 0;
@@ -27,6 +32,12 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void MostrarPergunta()
         {
+            if (perguntaAtual == 2)
+            {
+                MessageBox.Show("Quiz finalizado");
+                this.Close();
+                return;
+            }
             var pergunta = perguntas[perguntaAtual];
 
             lblPergunta.Text = pergunta.Questao;
@@ -43,10 +54,12 @@ namespace Quiz_Projeto_Integrador.Telas
 
             perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
             perguntaAtual = 0;
+            historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
+
             MostrarPergunta();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async  void button1_Click(object sender, EventArgs e)
         {
             var pergunta = perguntas[perguntaAtual];
 
@@ -74,17 +87,23 @@ namespace Quiz_Projeto_Integrador.Telas
                 return;
             }
 
+            bool correta = respostaEscolhida == pergunta.Resposta;
 
-            if (respostaEscolhida == pergunta.Resposta)
+            if (correta)
             {
                 pontos += pergunta.Pontos;
+                await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
                 MessageBox.Show("Resposta correta");
             }
             else
             {
                 MessageBox.Show("Resposta errada");
             }
+            await UsuarioRepositories.AdicionarRegistro(historicoId,pergunta.Questao,pergunta.Tema, correta, pergunta.Pontos);
+      
+
             perguntaAtual++;
+            
             MostrarPergunta();
         }
     }

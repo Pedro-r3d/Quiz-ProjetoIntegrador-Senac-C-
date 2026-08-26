@@ -31,7 +31,7 @@ namespace Quiz_Projeto_Integrador.Banco
                    }
                  );
         }
-
+        
         public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
         {
             var usuarios = await ConexaoBanco.CriarConexao().QueryAsync<UsuarioRankingDto>(
@@ -107,11 +107,21 @@ namespace Quiz_Projeto_Integrador.Banco
             var usuario = await ConexaoBanco.CriarConexao()
                 .QueryFirstOrDefaultAsync<UsuarioRankingDto>(
                     @"
-                    select u.id, u.nickname, h.pontos, count(r.correta or null) AS corretas, count(r.correta) AS quantRespostas, r.tema
+                    select u.id, u.nickname, COALESCE(SUM(h.pontos), 0), count(*) FILTER (WHERE r.correta = true) AS corretas, count(r.id) AS quantRespostas, 
+    (
+                    SELECT r2.tema
+                    FROM registro r2
+                    INNER JOIN historico h2
+                        ON h2.id = r2.historicoid
+                    WHERE h2.usuarioid = u.id
+                    GROUP BY r2.tema
+                    ORDER BY COUNT(*) FILTER (WHERE r2.correta = true) DESC
+                    LIMIT 1
+                ) AS tema 
                     from usuario u 
-                    inner join historico h
+                    LEFT join historico h
                     on u.id = h.usuarioid
-                    inner join registro r
+                    LEFT join registro r
                     on h.id = r.historicoid
                     where u.id = @IdUsuario
                     group by u.id, u.nickname, h.pontos, r.tema
@@ -131,7 +141,7 @@ namespace Quiz_Projeto_Integrador.Banco
             var pergunta = await ConexaoBanco.CriarConexao().
                 QueryAsync<Alternativas>(
                 @"
-                SELECT p.Resposta, p.Questao, p.Pontos, a.EscolhaA, a.EscolhaB, a.EscolhaC, a.EscolhaD
+                SELECT p.Resposta, p.Questao, p.Pontos,p.Tema, a.EscolhaA, a.EscolhaB, a.EscolhaC, a.EscolhaD
                 FROM
                 Alternativas a
                 INNER JOIN Pergunta p
@@ -157,11 +167,35 @@ namespace Quiz_Projeto_Integrador.Banco
             return historico;
         }
 
+<<<<<<< HEAD
 
         public static async Task<IEnumerable<Registro>> PegarRegistro(int Id)
+=======
+        public static async Task<int> CriarHistorico(int usuarioId)
+>>>>>>> 2ad18d0087fea5472fb91b41e1531eb3d4d0ed94
         {
-            var registro = await ConexaoBanco.CriarConexao().QueryAsync<Registro>(
+            var historicoId = await ConexaoBanco.CriarConexao()
+                .QuerySingleAsync<int>(
+                    @"
+            INSERT INTO Historico
+                (UsuarioId, DataDoQuiz, Pontos)
+            VALUES
+                (@UsuarioId, @DataDoQuiz, 0)
+            RETURNING Id
+            ",
+                    new
+                    {
+                        UsuarioId = usuarioId,
+                        DataDoQuiz = DateTime.Now.Date
+                    });
+            return historicoId;
+        }
+    
+        public static async Task AdicionarRegistro(int historicoId, string pergunta, string tema, bool correta, int valor)
+        {
+            await ConexaoBanco.CriarConexao().ExecuteAsync(
                 @"
+<<<<<<< HEAD
                 SELECT
                     Pergunta,
                     Tema,
@@ -175,9 +209,43 @@ namespace Quiz_Projeto_Integrador.Banco
                 new
                 {
                     Id = Id
+=======
+                     INSERT INTO Registro
+                            (HistoricoId, Pergunta, Tema, Correta, Valor)
+                     VALUES 
+                            (@HistoricoId, @Pergunta, @Tema, @Correta, @Valor)
+
+                    ",
+                new
+                {
+                    HistoricoId = historicoId,
+                    Pergunta = pergunta,
+                    Tema = tema,
+                    Correta = correta,
+                    Valor = valor
+>>>>>>> 2ad18d0087fea5472fb91b41e1531eb3d4d0ed94
                 }
                 );
-            return registro;
+        }
+
+        public static async Task AdicionarPontos(int historicoId, int pontos)
+        {
+           var perguntas = await ConexaoBanco.CriarConexao().ExecuteAsync(
+                @"
+                 UPDATE Historico
+                 SET Pontos = Pontos + @Pontos
+                 WHERE Id = @HistoricoId
+                 ",
+        new
+        {
+            HistoricoId = historicoId,
+            Pontos = pontos
+        }
+        
+    );
+
+
+              
         }
 
 
