@@ -198,17 +198,18 @@
             label4.AutoSize = true;
             label4.Location = new Point(12, 104);
             label4.Name = "label4";
-            label4.Size = new Size(149, 25);
+            label4.Size = new Size(153, 25);
             label4.TabIndex = 15;
-            label4.Text = "Pergunta numero";
+            label4.Text = "Pergunta número:";
             // 
             // lblPerguntaAtual
             // 
             lblPerguntaAtual.AutoSize = true;
-            lblPerguntaAtual.Location = new Point(37, 136);
+            lblPerguntaAtual.Location = new Point(74, 129);
             lblPerguntaAtual.Name = "lblPerguntaAtual";
-            lblPerguntaAtual.Size = new Size(0, 25);
+            lblPerguntaAtual.Size = new Size(22, 25);
             lblPerguntaAtual.TabIndex = 16;
+            lblPerguntaAtual.Text = "0";
             // 
             // lblPergunta
             // 
@@ -263,7 +264,7 @@
             Controls.Add(label1);
             Controls.Add(lblNickname);
             Name = "QuizAlternativa";
-            Text = "Quiz";
+            Text = "a";
             Load += QuizAlternativa_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

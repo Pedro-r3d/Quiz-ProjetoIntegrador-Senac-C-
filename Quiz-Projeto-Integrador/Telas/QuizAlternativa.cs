@@ -19,6 +19,7 @@ namespace Quiz_Projeto_Integrador.Telas
     {
         private int usuarioLogado;
         private int historicoId;
+       
 
 
         public QuizAlternativa(int idUsuario)
@@ -31,12 +32,13 @@ namespace Quiz_Projeto_Integrador.Telas
         private int perguntaAtual = 0;
         private int pontos = 0;
         private int sequencia = 0;
+        private int acertos = 0;
 
         private void MostrarPergunta()
         {
             if (perguntaAtual == 10)
             {
-                MessageBox.Show("Quiz finalizado");
+                new QuizResultados(pontos,acertos).ShowDialog();
                 this.Close();
                 return;
             }
@@ -100,6 +102,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 pontos += pergunta.Pontos;
                 await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
                 sequencia++;
+                acertos++;
             }
             else
             {

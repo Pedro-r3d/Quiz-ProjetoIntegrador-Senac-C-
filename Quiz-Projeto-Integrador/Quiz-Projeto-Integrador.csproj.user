@@ -17,6 +17,9 @@
     <Compile Update="Telas\QuizAlternativa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\QuizResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\ranking.cs">
       <SubType>Form</SubType>
     </Compile>
