@@ -44,6 +44,8 @@
             label4 = new Label();
             lblPerguntaAtual = new Label();
             lblPergunta = new Label();
+            label5 = new Label();
+            lblSequencia = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -213,7 +215,7 @@
             lblPergunta.AutoSize = true;
             lblPergunta.Font = new Font("Segoe UI", 15F);
             lblPergunta.ImageAlign = ContentAlignment.MiddleLeft;
-            lblPergunta.Location = new Point(167, 104);
+            lblPergunta.Location = new Point(199, 104);
             lblPergunta.MaximumSize = new Size(550, 140);
             lblPergunta.MinimumSize = new Size(100, 140);
             lblPergunta.Name = "lblPergunta";
@@ -223,11 +225,31 @@
             lblPergunta.Text = "PERGUNTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
             lblPergunta.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(0, 167);
+            label5.Name = "label5";
+            label5.Size = new Size(183, 25);
+            label5.TabIndex = 17;
+            label5.Text = "Sequencia de acertos:";
+            // 
+            // lblSequencia
+            // 
+            lblSequencia.AutoSize = true;
+            lblSequencia.Location = new Point(74, 207);
+            lblSequencia.Name = "lblSequencia";
+            lblSequencia.Size = new Size(22, 25);
+            lblSequencia.TabIndex = 18;
+            lblSequencia.Text = "0";
+            // 
             // QuizAlternativa
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblSequencia);
+            Controls.Add(label5);
             Controls.Add(lblPerguntaAtual);
             Controls.Add(label4);
             Controls.Add(groupBox1);
@@ -267,5 +289,7 @@
         private Label label4;
         private Label lblPerguntaAtual;
         private Label lblPergunta;
+        private Label label5;
+        private Label lblSequencia;
     }
 }

@@ -5,9 +5,13 @@ namespace Quiz_Projeto_Integrador.Telas
 {
     public partial class Historico : Form
     {
-        public Historico()
+        public int usuarioLogado;
+
+        public Historico(int idUsuario)
         {
             InitializeComponent();
+            usuarioLogado = idUsuario;
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -17,7 +21,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         public async void Historico_Load(object sender, EventArgs e)
         {
-            var historico = await UsuarioRepositories.PegarHistorico();
+            var historico = await UsuarioRepositories.PegarHistorico(usuarioLogado);
             dgvHistorico.DataSource = historico;
         }
 

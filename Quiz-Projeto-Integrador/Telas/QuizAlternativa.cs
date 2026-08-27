@@ -30,6 +30,7 @@ namespace Quiz_Projeto_Integrador.Telas
         private List<Alternativas> perguntas;
         private int perguntaAtual = 0;
         private int pontos = 0;
+        private int sequencia = 0;
 
         private void MostrarPergunta()
         {
@@ -45,6 +46,9 @@ namespace Quiz_Projeto_Integrador.Telas
             lblPontosTotais.Text = pontos.ToString();
             lblPerguntaAtual.Text = (perguntaAtual + 1).ToString();
             lblValorPergunta.Text = pergunta.Pontos.ToString();
+            lblSequencia.Text = sequencia.ToString();
+
+
 
             rb1.Text = pergunta.EscolhaA;
             rb2.Text = pergunta.EscolhaB;
@@ -54,6 +58,7 @@ namespace Quiz_Projeto_Integrador.Telas
         }
         private async void QuizAlternativa_Load(object sender, EventArgs e)
         {
+
             perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
             perguntaAtual = 0;
             historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
@@ -61,7 +66,7 @@ namespace Quiz_Projeto_Integrador.Telas
             MostrarPergunta();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        public async void button1_Click(object sender, EventArgs e)
         {
             var pergunta = perguntas[perguntaAtual];
 
@@ -90,17 +95,17 @@ namespace Quiz_Projeto_Integrador.Telas
             }
 
             bool correta = respostaEscolhida == pergunta.Resposta;
-
             if (correta)
             {
                 pontos += pergunta.Pontos;
                 await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
-                MessageBox.Show("Resposta correta");
+                sequencia++;
             }
             else
             {
-                MessageBox.Show("Resposta errada");
+                sequencia = 0;
             }
+
             await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
 
 
