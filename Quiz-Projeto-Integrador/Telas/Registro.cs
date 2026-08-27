@@ -32,6 +32,19 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             var registro = await UsuarioRepositories.PegarRegistro(IdHistorico);
             dgvRegistro.DataSource = new BindingList<RegistroDto>((IList<RegistroDto>)registro.ToList());
+            
+            var teste = await UsuarioRepositories.PegarIdRegistro(IdHistorico);
+            int corretasQuant = 0;
+            foreach (var pergunta in registro)
+            {
+                if (pergunta.Correta == true)
+                {
+                    corretasQuant++;
+                }
+
+            }
+            lblAcertos.Text = corretasQuant.ToString();
+
 
         }
     }
