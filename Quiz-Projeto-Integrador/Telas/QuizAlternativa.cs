@@ -1,5 +1,6 @@
 ﻿using Quiz_Projeto_Integrador.Banco;
 using Quiz_Projeto_Integrador.Dto;
+using Quiz_Projeto_Integrador.Objetos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Quiz_Projeto_Integrador.Telas
 {
-    
+
     public partial class QuizAlternativa : Form
     {
         private int usuarioLogado;
@@ -32,7 +33,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void MostrarPergunta()
         {
-            if (perguntaAtual == 2)
+            if (perguntaAtual == 10)
             {
                 MessageBox.Show("Quiz finalizado");
                 this.Close();
@@ -42,6 +43,8 @@ namespace Quiz_Projeto_Integrador.Telas
 
             lblPergunta.Text = pergunta.Questao;
             lblPontosTotais.Text = pontos.ToString();
+            lblPerguntaAtual.Text = (perguntaAtual + 1).ToString();
+            lblValorPergunta.Text = pergunta.Pontos.ToString();
 
             rb1.Text = pergunta.EscolhaA;
             rb2.Text = pergunta.EscolhaB;
@@ -51,7 +54,6 @@ namespace Quiz_Projeto_Integrador.Telas
         }
         private async void QuizAlternativa_Load(object sender, EventArgs e)
         {
-
             perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
             perguntaAtual = 0;
             historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
@@ -59,7 +61,7 @@ namespace Quiz_Projeto_Integrador.Telas
             MostrarPergunta();
         }
 
-        private async  void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             var pergunta = perguntas[perguntaAtual];
 
@@ -77,7 +79,7 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 respostaEscolhida = rb3.Text;
             }
-            else if (rb4.Checked) 
+            else if (rb4.Checked)
             {
                 respostaEscolhida = rb4.Text;
             }
@@ -99,12 +101,27 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 MessageBox.Show("Resposta errada");
             }
-            await UsuarioRepositories.AdicionarRegistro(historicoId,pergunta.Questao,pergunta.Tema, correta, pergunta.Pontos);
-      
+            await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
+
 
             perguntaAtual++;
-            
+
             MostrarPergunta();
+        }
+
+        private void lblValorPergunta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
