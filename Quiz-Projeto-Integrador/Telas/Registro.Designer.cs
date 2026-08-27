@@ -31,7 +31,7 @@
             dgvRegistro = new DataGridView();
             lblQuiz = new Label();
             label1 = new Label();
-            label2 = new Label();
+            lblAcertos = new Label();
             btnVoltar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRegistro).BeginInit();
             SuspendLayout();
@@ -70,15 +70,15 @@
             label1.TabIndex = 2;
             label1.Text = "Acertos";
             // 
-            // label2
+            // lblAcertos
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F);
-            label2.Location = new Point(12, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(93, 48);
-            label2.TabIndex = 3;
-            label2.Text = "X/10";
+            lblAcertos.AutoSize = true;
+            lblAcertos.Font = new Font("Segoe UI", 18F);
+            lblAcertos.Location = new Point(12, 120);
+            lblAcertos.Name = "lblAcertos";
+            lblAcertos.Size = new Size(93, 48);
+            lblAcertos.TabIndex = 3;
+            lblAcertos.Text = "X/10";
             // 
             // btnVoltar
             // 
@@ -97,7 +97,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVoltar);
-            Controls.Add(label2);
+            Controls.Add(lblAcertos);
             Controls.Add(label1);
             Controls.Add(lblQuiz);
             Controls.Add(dgvRegistro);
@@ -114,7 +114,7 @@
         private DataGridView dgvRegistro;
         private Label lblQuiz;
         private Label label1;
-        private Label label2;
+        private Label lblAcertos;
         private Button btnVoltar;
     }
 }
