@@ -24,7 +24,7 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnQuiz_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new QuizAlternativa(usuarioLogado).ShowDialog();
+            new QuizModos(usuarioLogado).ShowDialog();
             this.Show();
         }
 

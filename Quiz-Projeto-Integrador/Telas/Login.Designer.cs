@@ -92,6 +92,7 @@
             Controls.Add(lblLogarNick);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

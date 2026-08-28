@@ -130,14 +130,14 @@
             // rb1
             // 
             rb1.AutoSize = true;
-            rb1.Location = new Point(6, 13);
-            rb1.MaximumSize = new Size(200, 200);
-            rb1.MinimumSize = new Size(0, 80);
+            rb1.Location = new Point(6, 18);
+            rb1.MaximumSize = new Size(220, 90);
+            rb1.MinimumSize = new Size(0, 90);
             rb1.Name = "rb1";
-            rb1.Size = new Size(200, 80);
+            rb1.Size = new Size(220, 90);
             rb1.TabIndex = 13;
             rb1.TabStop = true;
-            rb1.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            rb1.Text = "Um espaço na memória utilizado para armazenar um valor";
             rb1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -146,20 +146,20 @@
             groupBox1.Controls.Add(rb2);
             groupBox1.Controls.Add(rb4);
             groupBox1.Controls.Add(rb1);
-            groupBox1.Location = new Point(193, 240);
+            groupBox1.Location = new Point(167, 240);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(413, 208);
+            groupBox1.Size = new Size(462, 208);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             // 
             // rb3
             // 
             rb3.AutoSize = true;
-            rb3.Location = new Point(6, 108);
-            rb3.MaximumSize = new Size(200, 200);
-            rb3.MinimumSize = new Size(0, 80);
+            rb3.Location = new Point(6, 109);
+            rb3.MaximumSize = new Size(210, 90);
+            rb3.MinimumSize = new Size(0, 90);
             rb3.Name = "rb3";
-            rb3.Size = new Size(200, 80);
+            rb3.Size = new Size(210, 90);
             rb3.TabIndex = 15;
             rb3.TabStop = true;
             rb3.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -169,8 +169,8 @@
             // rb2
             // 
             rb2.AutoSize = true;
-            rb2.Location = new Point(207, 13);
-            rb2.MaximumSize = new Size(205, 200);
+            rb2.Location = new Point(241, 18);
+            rb2.MaximumSize = new Size(205, 90);
             rb2.MinimumSize = new Size(0, 90);
             rb2.Name = "rb2";
             rb2.Size = new Size(205, 90);
@@ -183,8 +183,8 @@
             // rb4
             // 
             rb4.AutoSize = true;
-            rb4.Location = new Point(207, 108);
-            rb4.MaximumSize = new Size(205, 200);
+            rb4.Location = new Point(241, 108);
+            rb4.MaximumSize = new Size(205, 90);
             rb4.MinimumSize = new Size(0, 90);
             rb4.Name = "rb4";
             rb4.Size = new Size(205, 90);

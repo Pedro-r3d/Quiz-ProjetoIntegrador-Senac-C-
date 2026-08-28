@@ -19,12 +19,14 @@ namespace Quiz_Projeto_Integrador.Telas
     {
         private int usuarioLogado;
         private int historicoId;
-       
+        private bool ehTreino_;
 
 
-        public QuizAlternativa(int idUsuario)
+        public QuizAlternativa(int idUsuario, bool ehTreino)
         {
             InitializeComponent();
+
+            ehTreino_ = ehTreino;
 
             usuarioLogado = idUsuario;
         }
@@ -33,16 +35,23 @@ namespace Quiz_Projeto_Integrador.Telas
         private int pontos = 0;
         private int sequencia = 0;
         private int acertos = 0;
+        string respostaEscolhida = "";
+        bool correta;
+
 
         private void MostrarPergunta()
         {
-            if (perguntaAtual == 10)
-            {
-                new QuizResultados(pontos,acertos).ShowDialog();
-                this.Close();
-                return;
-            }
             var pergunta = perguntas[perguntaAtual];
+            if (!ehTreino_)
+            {
+                if (perguntaAtual == 10)
+                {
+                    new QuizResultados(pontos, acertos).ShowDialog();
+                    this.Close();
+                    return;
+                }
+            }
+        
 
             lblPergunta.Text = pergunta.Questao;
             lblPontosTotais.Text = pontos.ToString();
@@ -61,15 +70,19 @@ namespace Quiz_Projeto_Integrador.Telas
         private async void QuizAlternativa_Load(object sender, EventArgs e)
         {
 
+
             perguntas = await UsuarioRepositories.PegarPerguntaAlternativas();
             perguntaAtual = 0;
-            historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
-
+            if (!ehTreino_)
+            {
+                historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
+            }
             MostrarPergunta();
         }
 
         public async void button1_Click(object sender, EventArgs e)
         {
+
             var pergunta = perguntas[perguntaAtual];
 
             string respostaEscolhida = "";
@@ -96,25 +109,36 @@ namespace Quiz_Projeto_Integrador.Telas
                 return;
             }
 
-            bool correta = respostaEscolhida == pergunta.Resposta;
-            if (correta)
+            correta = respostaEscolhida == pergunta.Resposta;
+
+            if (!ehTreino_)
             {
-                pontos += pergunta.Pontos;
-                await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
-                sequencia++;
-                acertos++;
+                if (correta)
+                {
+                    pontos += pergunta.Pontos;
+                    await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
+                    sequencia++;
+                    acertos++;
+                }
+           
+                await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
+                perguntaAtual++;
+
+                MostrarPergunta();
             }
             else
             {
-                sequencia = 0;
+                if (!correta)
+                {
+                    sequencia = 0;
+                    perguntaAtual = 0;
+                }
+                perguntaAtual++;
+                MostrarPergunta();
+
             }
 
-            await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
 
-
-            perguntaAtual++;
-
-            MostrarPergunta();
         }
 
         private void lblValorPergunta_Click(object sender, EventArgs e)
