@@ -46,6 +46,7 @@
             lblPergunta = new Label();
             label5 = new Label();
             lblSequencia = new Label();
+            btnSair = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -201,6 +202,7 @@
             label4.Size = new Size(153, 25);
             label4.TabIndex = 15;
             label4.Text = "Pergunta número:";
+            label4.Click += label4_Click;
             // 
             // lblPerguntaAtual
             // 
@@ -244,11 +246,23 @@
             lblSequencia.TabIndex = 18;
             lblSequencia.Text = "0";
             // 
+            // btnSair
+            // 
+            btnSair.Location = new Point(24, 396);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(125, 42);
+            btnSair.TabIndex = 19;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Visible = false;
+            btnSair.Click += btnSair_Click;
+            // 
             // QuizAlternativa
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSair);
             Controls.Add(lblSequencia);
             Controls.Add(label5);
             Controls.Add(lblPerguntaAtual);
@@ -264,7 +278,7 @@
             Controls.Add(label1);
             Controls.Add(lblNickname);
             Name = "QuizAlternativa";
-            Text = "a";
+            Text = "Quiz";
             Load += QuizAlternativa_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -292,5 +306,6 @@
         private Label lblPergunta;
         private Label label5;
         private Label lblSequencia;
+        private Button btnSair;
     }
 }

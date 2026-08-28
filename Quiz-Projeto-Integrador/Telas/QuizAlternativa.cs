@@ -41,6 +41,14 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void MostrarPergunta()
         {
+            if (ehTreino_)
+            {
+                if (perguntaAtual == 10)
+                {
+                    MessageBox.Show("Quiz finalizado. reiniciando...");
+                    perguntaAtual = 0;
+                }
+            }
             var pergunta = perguntas[perguntaAtual];
             if (!ehTreino_)
             {
@@ -51,13 +59,24 @@ namespace Quiz_Projeto_Integrador.Telas
                     return;
                 }
             }
-        
 
             lblPergunta.Text = pergunta.Questao;
             lblPontosTotais.Text = pontos.ToString();
-            lblPerguntaAtual.Text = (perguntaAtual + 1).ToString();
+            lblPerguntaAtual.Text = (perguntaAtual).ToString();
             lblValorPergunta.Text = pergunta.Pontos.ToString();
             lblSequencia.Text = sequencia.ToString();
+
+            if (ehTreino_)
+            {
+                lblPontosTotais.Text = "";
+                lblValorPergunta.Text = "";
+                lblSequencia.Text = "";
+                label1.Text = "";
+                label2.Text = "";
+                label3.Text = "";
+                label5.Text = "";
+                btnSair.Visible = true;
+            }
 
 
 
@@ -120,7 +139,7 @@ namespace Quiz_Projeto_Integrador.Telas
                     sequencia++;
                     acertos++;
                 }
-           
+
                 await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
                 perguntaAtual++;
 
@@ -128,12 +147,16 @@ namespace Quiz_Projeto_Integrador.Telas
             }
             else
             {
+
                 if (!correta)
                 {
                     sequencia = 0;
                     perguntaAtual = 0;
                 }
-                perguntaAtual++;
+                else
+                {
+                    perguntaAtual++;
+                }
                 MostrarPergunta();
 
             }
@@ -154,6 +177,16 @@ namespace Quiz_Projeto_Integrador.Telas
         private void rb2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
