@@ -23,7 +23,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new QuizAlternativa(usuarioLogado,ehTreino = false).ShowDialog();
+            new QuizAlternativa(usuarioLogado,false).ShowDialog();
         }
 
         private void QuizModos_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new QuizAlternativa(usuarioLogado,ehTreino = true).ShowDialog();
+            new QuizAlternativa(usuarioLogado,true).ShowDialog();
         }
     }
 }

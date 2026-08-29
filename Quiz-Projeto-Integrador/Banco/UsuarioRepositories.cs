@@ -194,21 +194,19 @@ namespace Quiz_Projeto_Integrador.Banco
 
         public static async Task<int> CriarHistorico(int usuarioId)        {
             var historicoId = await ConexaoBanco.CriarConexao()
-                .QueryFirstOrDefaultAsync<int>(
+                .QuerySingleAsync<int>(
                     @"
             INSERT INTO Historico
                 (UsuarioId, DataDoQuiz, Pontos)
-            SELECT
-                @UsuarioId, @DataDoQuiz, 0
-            WHERE EXISTS (
-                     SELECT 1 FROM Usuario WHERE Id = @UsuarioId
-                     )
+            VALUES
+                (@UsuarioId, @DataDoQuiz, 0)
             RETURNING Id
             ",
                     new
                     {
                         UsuarioId = usuarioId,
-                        DataDoQuiz = DateTime.Now.Date
+                        DataDoQuiz = DateTime.Now.Date,
+                        Pontos = 0
                     });
             return historicoId;
         }
