@@ -299,5 +299,28 @@ namespace Quiz_Projeto_Integrador.Banco
                 );
             return registro;
         }
+
+        public static async Task<Conquistas>VerificarConquistas(int id)
+        {
+            var conquistas = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Conquistas>(
+                @"
+                SELECT
+                    Id,
+                    Disciplina,
+                    Perfect,
+                    Preparado
+                FROM
+                    Conquistas
+                WHERE
+                    UsuarioId = @id
+                ",
+                new
+                {
+                    Id = id
+                }
+                );
+            return conquistas;
+        }
+
     }
 }
