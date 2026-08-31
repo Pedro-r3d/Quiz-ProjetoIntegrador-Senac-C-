@@ -50,24 +50,26 @@
             // 
             // btnModoNormal
             // 
-            btnModoNormal.Font = new Font("Segoe UI", 10F);
+            btnModoNormal.BackColor = Color.FromArgb(133, 6, 235);
+            btnModoNormal.Font = new Font("Showcard Gothic", 12F);
             btnModoNormal.Location = new Point(114, 208);
             btnModoNormal.Name = "btnModoNormal";
             btnModoNormal.Size = new Size(193, 72);
             btnModoNormal.TabIndex = 1;
             btnModoNormal.Text = "Modo normal";
-            btnModoNormal.UseVisualStyleBackColor = true;
+            btnModoNormal.UseVisualStyleBackColor = false;
             btnModoNormal.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Font = new Font("Segoe UI", 10F);
+            button2.BackColor = Color.FromArgb(133, 6, 235);
+            button2.Font = new Font("Showcard Gothic", 12F);
             button2.Location = new Point(457, 208);
             button2.Name = "button2";
             button2.Size = new Size(193, 72);
             button2.TabIndex = 2;
             button2.Text = "Modo treino";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label2
@@ -108,18 +110,21 @@
             // 
             // button1
             // 
-            button1.Location = new Point(300, 389);
+            button1.BackColor = Color.FromArgb(255, 128, 128);
+            button1.Font = new Font("Showcard Gothic", 12F);
+            button1.Location = new Point(300, 368);
             button1.Name = "button1";
-            button1.Size = new Size(172, 49);
+            button1.Size = new Size(172, 70);
             button1.TabIndex = 7;
             button1.Text = "Retornar ao menu";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
             // QuizModos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(230, 200, 87);
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Controls.Add(label5);

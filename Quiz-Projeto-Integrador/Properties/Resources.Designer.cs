@@ -63,6 +63,56 @@ namespace Quiz_Projeto_Integrador.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7296447_user_icon_in_flat_style_person_icon_client_symbol_vetor_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("7296447-user-icon-in-flat-style-person-icon-client-symbol-vetor-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images__1_ {
+            get {
+                object obj = ResourceManager.GetObject("images (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("images__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("images-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("images-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_exit_button_game_ui_png_image_14585977 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-exit-button-game-ui-png-image_14585977", resourceCulture);
@@ -86,6 +136,16 @@ namespace Quiz_Projeto_Integrador.Properties {
         internal static System.Drawing.Bitmap pngtree_exit_button_game_ui_png_image_145859771 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-exit-button-game-ui-png-image_145859771", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ranking_glyph_board_icon_sports_260nw_2493578947_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("ranking-glyph-board-icon-sports-260nw-2493578947-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

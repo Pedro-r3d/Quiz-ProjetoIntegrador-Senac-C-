@@ -28,61 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             btnContinuar = new Button();
             lblPontosGanhos = new Label();
             lblTotalAcertos = new Label();
             label4 = new Label();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(245, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(286, 54);
-            label1.TabIndex = 0;
-            label1.Text = "Quiz finalizado";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F);
+            label2.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(97, 122);
             label2.Name = "label2";
-            label2.Size = new Size(216, 41);
+            label2.Size = new Size(237, 41);
             label2.TabIndex = 1;
             label2.Text = "Pontos ganhos";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 15F);
+            label3.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(454, 127);
             label3.Name = "label3";
-            label3.Size = new Size(227, 36);
+            label3.Size = new Size(255, 41);
             label3.TabIndex = 2;
             label3.Text = "Total de acertos";
             // 
             // btnContinuar
             // 
-            btnContinuar.Font = new Font("Microsoft Sans Serif", 12F);
+            btnContinuar.BackColor = Color.FromArgb(133, 6, 235);
+            btnContinuar.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnContinuar.Location = new Point(294, 295);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(171, 53);
             btnContinuar.TabIndex = 3;
             btnContinuar.Text = "Prosseguir";
-            btnContinuar.UseVisualStyleBackColor = true;
+            btnContinuar.UseVisualStyleBackColor = false;
             btnContinuar.Click += btnContinuar_Click;
             // 
             // lblPontosGanhos
             // 
             lblPontosGanhos.AutoSize = true;
             lblPontosGanhos.Font = new Font("Microsoft Sans Serif", 12F);
-            lblPontosGanhos.Location = new Point(178, 180);
+            lblPontosGanhos.Location = new Point(193, 180);
             lblPontosGanhos.Name = "lblPontosGanhos";
             lblPontosGanhos.Size = new Size(26, 29);
             lblPontosGanhos.TabIndex = 4;
@@ -93,7 +84,7 @@
             // 
             lblTotalAcertos.AutoSize = true;
             lblTotalAcertos.Font = new Font("Microsoft Sans Serif", 12F);
-            lblTotalAcertos.Location = new Point(546, 181);
+            lblTotalAcertos.Location = new Point(533, 180);
             lblTotalAcertos.Name = "lblTotalAcertos";
             lblTotalAcertos.Size = new Size(26, 29);
             lblTotalAcertos.TabIndex = 5;
@@ -104,24 +95,35 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(578, 181);
+            label4.Location = new Point(565, 180);
             label4.Name = "label4";
             label4.Size = new Size(52, 29);
             label4.TabIndex = 6;
             label4.Text = "/ 10";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Showcard Gothic", 30F);
+            label1.Location = new Point(152, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(529, 74);
+            label1.TabIndex = 7;
+            label1.Text = "QUIZ FINALIZADO";
+            // 
             // QuizResultados
             // 
             AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 360);
+            BackColor = Color.FromArgb(230, 200, 87);
+            ClientSize = new Size(800, 363);
+            Controls.Add(label1);
             Controls.Add(label4);
             Controls.Add(lblTotalAcertos);
             Controls.Add(lblPontosGanhos);
             Controls.Add(btnContinuar);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Font = new Font("Microsoft Sans Serif", 8.25F);
             Margin = new Padding(3, 2, 3, 2);
             Name = "QuizResultados";
@@ -132,13 +134,12 @@
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private Label label3;
         private Button btnContinuar;
         private Label lblPontosGanhos;
         private Label lblTotalAcertos;
         private Label label4;
+        private Label label1;
     }
 }
