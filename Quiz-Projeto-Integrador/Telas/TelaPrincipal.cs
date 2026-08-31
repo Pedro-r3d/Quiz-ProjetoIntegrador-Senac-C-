@@ -24,13 +24,13 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnQuiz_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new QuizAlternativa().ShowDialog();
+            new QuizModos(usuarioLogado).ShowDialog();
             this.Show();
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-         
+
             this.Hide();
             new PerfilDoUsuario(usuarioLogado).ShowDialog();
             this.Show();
@@ -46,7 +46,7 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnHistorico_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Historico().ShowDialog();
+            new Historico(usuarioLogado).ShowDialog();
             this.Show();
         }
         private void btnQuiz_MouseEnter(object sender, EventArgs e)
@@ -78,27 +78,27 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnQuiz_MouseLeave(object sender, EventArgs e)
         {
-            btnQuiz.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnQuiz.BackColor = Color.FromArgb(133, 6, 235);
         }
 
         private void btnRaking_MouseLeave(object sender, EventArgs e)
         {
-            btnRaking.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnRaking.BackColor = Color.FromArgb(133, 6, 235);
         }
 
         private void btnHistorico_MouseLeave(object sender, EventArgs e)
         {
-            btnHistorico.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnHistorico.BackColor = Color.FromArgb(133, 6, 235);
         }
 
         private void btnPerfil_MouseLeave(object sender, EventArgs e)
         {
-            btnPerfil.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnPerfil.BackColor = Color.FromArgb(133, 6, 235);
         }
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void btnSair_MouseEnter(object sender, EventArgs e)
@@ -107,10 +107,21 @@ namespace Quiz_Projeto_Integrador.Telas
         }
         private void btnSair_MouseLeave_1(object sender, EventArgs e)
         {
-            btnSair.BackColor = Color.FromKnownColor(KnownColor.Control);
+            btnSair.BackColor = Color.FromArgb(133, 6, 235);
 
         }
 
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
+        
     }
 }

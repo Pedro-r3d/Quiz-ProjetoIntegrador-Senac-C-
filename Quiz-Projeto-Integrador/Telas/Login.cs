@@ -22,13 +22,13 @@ namespace Quiz_Projeto_Integrador.Telas
 
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
 
-            if (txtLogarSenha.Text == "" || txtLogarNick.Text == "") 
+            if (txtLogarSenha.Text == "" || txtLogarNick.Text == "")
             {
                 MessageBox.Show("Informações não preenchidas");
                 return;
             }
-
-            if(usuario == null)
+         
+            if (usuario == null || !usuario.SenhaCorreta(senha))
             {
                 MessageBox.Show("Usuario ou senha incorretos");
                 return;
@@ -41,7 +41,12 @@ namespace Quiz_Projeto_Integrador.Telas
                 new TelaPrincipal(idUsuario).ShowDialog();
                 this.Show();
             }
-          
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
