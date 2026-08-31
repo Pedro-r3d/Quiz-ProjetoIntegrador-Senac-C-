@@ -26,13 +26,26 @@ namespace Quiz_Projeto_Integrador.Telas
         {
             var usuario = await UsuarioRepositories.SelectPorId(usuarioLogado);
 
-        
-
             lblPontos.Text = usuario.Pontos.ToString();
             lblRespostas.Text = usuario.QuantRespostas.ToString();
             lblAcertos.Text = usuario.Corretas.ToString();
             lblNickname.Text = usuario.Nickname;
             lblTema.Text = usuario.Tema;
+
+            var conquista = await UsuarioRepositories.VerificarConquistas(usuarioLogado);
+            
+            if (conquista.Disciplina == true)
+            {
+
+            }
+
+            if (conquista.Perfect == true)
+            {
+
+            }
+
+            if (conquista.Preparado == true) 
+
         }
 
         private void label1_Click(object sender, EventArgs e)
