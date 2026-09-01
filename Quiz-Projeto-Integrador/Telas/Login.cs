@@ -1,10 +1,13 @@
 ﻿using BCrypt.Net;
 using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Objetos;
 
 namespace Quiz_Projeto_Integrador.Telas
 {
+
     public partial class Login : Form
     {
+    private bool ehAdmin = false;
         public Login()
         {
             InitializeComponent();
@@ -21,7 +24,12 @@ namespace Quiz_Projeto_Integrador.Telas
             string senha = txtLogarSenha.Text;
 
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
+            int idUsuario = usuario.Id;
+            if (txtLogarNick.Text == "Admin" && txtLogarSenha.Text == "senha") 
+            {
+                ehAdmin = true;
 
+            }
             if (txtLogarSenha.Text == "" || txtLogarNick.Text == "")
             {
                 MessageBox.Show("Informações não preenchidas");
@@ -36,9 +44,8 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (usuario.SenhaCorreta(senha))
             {
-                int idUsuario = usuario.Id;
                 this.Hide();
-                new TelaPrincipal(idUsuario).ShowDialog();
+                new TelaPrincipal(idUsuario, ehAdmin).ShowDialog();
                 this.Show();
             }
 
