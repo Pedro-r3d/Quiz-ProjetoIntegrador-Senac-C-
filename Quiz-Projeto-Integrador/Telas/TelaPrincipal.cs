@@ -13,14 +13,13 @@ namespace Quiz_Projeto_Integrador.Telas
     public partial class TelaPrincipal : Form
     {
         public int usuarioLogado;
-        bool EhAdmin;
+        bool EhAdmin = false;
 
         public TelaPrincipal(int idUsuario, bool ehAdmin)
         {
             InitializeComponent();
 
             EhAdmin = ehAdmin;
-
             usuarioLogado = idUsuario;
         }
 
@@ -101,7 +100,11 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
+
+            btnTelaPergunta.Visible = false;
+            lblAvisoAdmin.Visible = false;
             this.Close();
+
         }
 
         private void btnSair_MouseEnter(object sender, EventArgs e)
@@ -121,7 +124,8 @@ namespace Quiz_Projeto_Integrador.Telas
                 btnTelaPergunta.Visible = true;
                 lblAvisoAdmin.Visible = true;
             }
-        }
+          
+            }
 
         private void label1_Click(object sender, EventArgs e)
         {
