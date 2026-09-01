@@ -38,6 +38,8 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
+            btnTelaPergunta = new Button();
+            lblAvisoAdmin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -166,12 +168,36 @@
             pictureBox5.TabIndex = 9;
             pictureBox5.TabStop = false;
             // 
+            // btnTelaPergunta
+            // 
+            btnTelaPergunta.Location = new Point(47, 238);
+            btnTelaPergunta.Name = "btnTelaPergunta";
+            btnTelaPergunta.Size = new Size(188, 54);
+            btnTelaPergunta.TabIndex = 10;
+            btnTelaPergunta.Text = "Adicionar pergunta";
+            btnTelaPergunta.UseVisualStyleBackColor = true;
+            btnTelaPergunta.Visible = false;
+            btnTelaPergunta.Click += btnTelaPergunta_Click;
+            // 
+            // lblAvisoAdmin
+            // 
+            lblAvisoAdmin.AutoSize = true;
+            lblAvisoAdmin.ForeColor = Color.Red;
+            lblAvisoAdmin.Location = new Point(29, 297);
+            lblAvisoAdmin.Name = "lblAvisoAdmin";
+            lblAvisoAdmin.Size = new Size(224, 25);
+            lblAvisoAdmin.TabIndex = 11;
+            lblAvisoAdmin.Text = "Função exclusiva para adm";
+            lblAvisoAdmin.Visible = false;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 200, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(lblAvisoAdmin);
+            Controls.Add(btnTelaPergunta);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -191,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -205,5 +232,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Button btnTelaPergunta;
+        private Label lblAvisoAdmin;
     }
 }

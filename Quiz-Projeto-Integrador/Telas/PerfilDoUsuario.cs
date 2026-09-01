@@ -44,7 +44,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
             }
 
-            if (conquista.Preparado == true) 
+            if (conquista.Preparado == true) { } 
 
         }
 

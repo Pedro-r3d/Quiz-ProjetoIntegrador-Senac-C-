@@ -210,7 +210,51 @@ namespace Quiz_Projeto_Integrador.Banco
                     });
             return historicoId;
         }
-    
+        public static async Task<int>AdicionarPergunta(string questao, string resposta, string nivel, string tema, int pontos)
+        {
+            int perguntaId = await ConexaoBanco.CriarConexao().QuerySingleAsync<int>(
+                @"
+                      INSERT INTO Pergunta
+                            (Questao, Resposta, Tipo, Nivel, Tema, Pontos)
+                      VALUES
+                            (@Questao, @Resposta, 'Multipla escolha', @Nivel, @Tema, @Pontos)
+                      RETURNING Id;
+                ",
+                new
+                {
+                   Questao = questao,
+                   Resposta = resposta,
+                   Nivel = nivel,
+                   Tema = tema,
+                   Pontos = pontos
+                }
+                );
+                return perguntaId;
+        }
+        public static async Task AdicionarAlternativas(
+                    int perguntaId,
+                    string escolhaA,
+                    string escolhaB,
+                    string escolhaC,
+                     string escolhaD)
+{
+                await ConexaoBanco.CriarConexao().ExecuteAsync(
+                    @"
+            INSERT INTO Alternativas
+                (PerguntaId, EscolhaA, EscolhaB, EscolhaC, EscolhaD)
+            VALUES
+                (@PerguntaId, @EscolhaA, @EscolhaB, @EscolhaC, @EscolhaD)
+        ",
+                    new
+                    {
+                        PerguntaId = perguntaId,
+                        EscolhaA = escolhaA,
+                        EscolhaB = escolhaB,
+                        EscolhaC = escolhaC,
+                        EscolhaD = escolhaD
+                    });
+            }
+
         public static async Task AdicionarRegistro(int historicoId, string pergunta, string tema, bool correta, int valor)
         {
             await ConexaoBanco.CriarConexao().ExecuteAsync(
