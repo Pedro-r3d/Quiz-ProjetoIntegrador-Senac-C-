@@ -80,6 +80,11 @@ namespace Quiz_Projeto_Integrador.Telas
                 label3.Text = "";
                 label5.Text = "";
                 btnSair.Visible = true;
+
+                if (lblPontosTotais.Text == "80")
+                {
+
+                }
             }
 
             rb1.Text = pergunta.EscolhaA;
@@ -98,6 +103,10 @@ namespace Quiz_Projeto_Integrador.Telas
             perguntaAtual = 0;
             if (!ehTreino_)
             {
+                if (lblSequencia.Text == "10")
+                {
+                    
+                }
                 historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
             }
            await MostrarPergunta();
