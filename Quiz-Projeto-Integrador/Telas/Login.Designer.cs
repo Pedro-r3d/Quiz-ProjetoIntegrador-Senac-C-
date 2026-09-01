@@ -34,6 +34,7 @@
             txtLogarSenha = new TextBox();
             btnLogin = new Button();
             label2 = new Label();
+            btnSair = new Button();
             SuspendLayout();
             // 
             // lblLogarNick
@@ -74,10 +75,10 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.Green;
-            btnLogin.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(318, 352);
+            btnLogin.Font = new Font("Showcard Gothic", 12F);
+            btnLogin.Location = new Point(624, 324);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(137, 50);
+            btnLogin.Size = new Size(152, 58);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Logar";
             btnLogin.UseVisualStyleBackColor = false;
@@ -93,12 +94,25 @@
             label2.TabIndex = 5;
             label2.Text = "LOGIN";
             // 
+            // btnSair
+            // 
+            btnSair.BackColor = Color.FromArgb(255, 128, 128);
+            btnSair.Font = new Font("Showcard Gothic", 12F);
+            btnSair.Location = new Point(624, 388);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(152, 50);
+            btnSair.TabIndex = 6;
+            btnSair.Text = "Voltar";
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 200, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSair);
             Controls.Add(label2);
             Controls.Add(btnLogin);
             Controls.Add(txtLogarSenha);
@@ -120,5 +134,6 @@
         private TextBox txtLogarSenha;
         private Button btnLogin;
         private Label label2;
+        private Button btnSair;
     }
 }

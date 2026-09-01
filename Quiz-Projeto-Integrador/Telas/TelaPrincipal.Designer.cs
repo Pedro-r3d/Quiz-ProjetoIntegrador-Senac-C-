@@ -35,16 +35,16 @@
             btnSair = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            pbPerfil = new PictureBox();
             pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            pbQuiz = new PictureBox();
             btnTelaPergunta = new Button();
             lblAvisoAdmin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbQuiz).BeginInit();
             SuspendLayout();
             // 
             // btnQuiz
@@ -138,15 +138,15 @@
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // pbPerfil
             // 
-            pictureBox3.Image = Properties.Resources._7296447_user_icon_in_flat_style_person_icon_client_symbol_vetor_removebg_preview;
-            pictureBox3.Location = new Point(499, 272);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(77, 70);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
+            pbPerfil.Image = Properties.Resources._7296447_user_icon_in_flat_style_person_icon_client_symbol_vetor_removebg_preview;
+            pbPerfil.Location = new Point(499, 272);
+            pbPerfil.Name = "pbPerfil";
+            pbPerfil.Size = new Size(77, 70);
+            pbPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+            pbPerfil.TabIndex = 7;
+            pbPerfil.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -158,15 +158,15 @@
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // pbQuiz
             // 
-            pictureBox5.Image = Properties.Resources.images_removebg_preview__1_;
-            pictureBox5.Location = new Point(499, 12);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(77, 70);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 9;
-            pictureBox5.TabStop = false;
+            pbQuiz.Image = Properties.Resources.images_removebg_preview__1_;
+            pbQuiz.Location = new Point(499, 12);
+            pbQuiz.Name = "pbQuiz";
+            pbQuiz.Size = new Size(77, 70);
+            pbQuiz.SizeMode = PictureBoxSizeMode.Zoom;
+            pbQuiz.TabIndex = 9;
+            pbQuiz.TabStop = false;
             // 
             // btnTelaPergunta
             // 
@@ -198,9 +198,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(lblAvisoAdmin);
             Controls.Add(btnTelaPergunta);
-            Controls.Add(pictureBox5);
+            Controls.Add(pbQuiz);
             Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
+            Controls.Add(pbPerfil);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnSair);
@@ -213,9 +213,9 @@
             Load += TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbQuiz).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,9 +229,9 @@
         private Button btnSair;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox pbPerfil;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox pbQuiz;
         private Button btnTelaPergunta;
         private Label lblAvisoAdmin;
     }

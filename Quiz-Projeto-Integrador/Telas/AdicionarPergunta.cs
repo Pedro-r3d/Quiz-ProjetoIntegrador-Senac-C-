@@ -21,10 +21,10 @@ namespace Quiz_Projeto_Integrador.Telas
         private async void button1_Click(object sender, EventArgs e)
         {
 
-           string questao = txtQuestao.Text;
-           string resposta = txtResposta.Text;
-           string nivel = rbDificil.Checked ? "Dificil" : rbMedio.Checked ? "Medio" : "Facil";
-           string tema = txtTema.Text;
+            string questao = txtQuestao.Text;
+            string resposta = txtResposta.Text;
+            string nivel = rbDificil.Checked ? "Dificil" : rbMedio.Checked ? "Medio" : "Facil";
+            string tema = rbCsharp.Checked ? "C#" : rbJava.Checked ? "Java" : "SQL";
             int pontos = (int)nudPontos.Value;
 
             int perguntaId = await UsuarioRepositories.AdicionarPergunta(
@@ -46,6 +46,11 @@ namespace Quiz_Projeto_Integrador.Telas
         }
 
         private void AdicionarPergunta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
