@@ -164,7 +164,8 @@ namespace Quiz_Projeto_Integrador.Banco
                 FROM
                 Alternativas a
                 INNER JOIN Pergunta p
-                ON a.PerguntaId = p.Id
+                ON a.PerguntaId = p.Id 
+                ORDER BY RANDOM()
                 "
                 );
             return (List<Alternativas>)pergunta;
