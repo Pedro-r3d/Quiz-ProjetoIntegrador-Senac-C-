@@ -32,19 +32,19 @@
             btnRaking = new Button();
             btnPerfil = new Button();
             btnHistorico = new Button();
-            btnSair = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pbPerfil = new PictureBox();
-            pictureBox4 = new PictureBox();
             pbQuiz = new PictureBox();
+            btnSair = new Button();
+            pictureBox4 = new PictureBox();
             btnTelaPergunta = new Button();
             lblAvisoAdmin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbQuiz).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // btnQuiz
@@ -57,9 +57,9 @@
             btnQuiz.TabIndex = 0;
             btnQuiz.Text = "Iniciar quiz";
             btnQuiz.UseVisualStyleBackColor = false;
-            btnQuiz.Click += btnQuiz_Click;
-            btnQuiz.MouseEnter += btnQuiz_MouseEnter;
-            btnQuiz.MouseLeave += btnQuiz_MouseLeave;
+            btnQuiz.Click += this.btnQuiz_Click;
+            btnQuiz.MouseEnter += this.btnQuiz_MouseEnter;
+            btnQuiz.MouseLeave += this.btnQuiz_MouseLeave;
             // 
             // btnRaking
             // 
@@ -71,9 +71,9 @@
             btnRaking.TabIndex = 1;
             btnRaking.Text = "Ranking";
             btnRaking.UseVisualStyleBackColor = false;
-            btnRaking.Click += btnRaking_Click;
-            btnRaking.MouseEnter += btnRaking_MouseEnter;
-            btnRaking.MouseLeave += btnRaking_MouseLeave;
+            btnRaking.Click += this.btnRaking_Click;
+            btnRaking.MouseEnter += this.btnRaking_MouseEnter;
+            btnRaking.MouseLeave += this.btnRaking_MouseLeave;
             // 
             // btnPerfil
             // 
@@ -85,10 +85,10 @@
             btnPerfil.TabIndex = 2;
             btnPerfil.Text = "Ver perfil";
             btnPerfil.UseVisualStyleBackColor = false;
-            btnPerfil.Click += btnPerfil_Click;
-            btnPerfil.Enter += btnPerfil_Enter;
-            btnPerfil.MouseEnter += btnPerfil_MouseEnter;
-            btnPerfil.MouseLeave += btnPerfil_MouseLeave;
+            btnPerfil.Click += this.btnPerfil_Click;
+            btnPerfil.Enter += this.btnPerfil_Enter;
+            btnPerfil.MouseEnter += this.btnPerfil_MouseEnter;
+            btnPerfil.MouseLeave += this.btnPerfil_MouseLeave;
             // 
             // btnHistorico
             // 
@@ -100,23 +100,9 @@
             btnHistorico.TabIndex = 3;
             btnHistorico.Text = "Histórico";
             btnHistorico.UseVisualStyleBackColor = false;
-            btnHistorico.Click += btnHistorico_Click;
-            btnHistorico.MouseEnter += btnHistorico_MouseEnter;
-            btnHistorico.MouseLeave += btnHistorico_MouseLeave;
-            // 
-            // btnSair
-            // 
-            btnSair.BackColor = Color.FromArgb(255, 128, 128);
-            btnSair.Font = new Font("Showcard Gothic", 12F);
-            btnSair.Location = new Point(281, 368);
-            btnSair.Name = "btnSair";
-            btnSair.Size = new Size(212, 70);
-            btnSair.TabIndex = 4;
-            btnSair.Text = "Deslogar";
-            btnSair.UseVisualStyleBackColor = false;
-            btnSair.Click += btnSair_Click_1;
-            btnSair.MouseEnter += btnSair_MouseEnter;
-            btnSair.MouseLeave += btnSair_MouseLeave_1;
+            btnHistorico.Click += this.btnHistorico_Click;
+            btnHistorico.MouseEnter += this.btnHistorico_MouseEnter;
+            btnHistorico.MouseLeave += this.btnHistorico_MouseLeave;
             // 
             // pictureBox1
             // 
@@ -148,16 +134,6 @@
             pbPerfil.TabIndex = 7;
             pbPerfil.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.images_removebg_preview;
-            pictureBox4.Location = new Point(499, 368);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(77, 70);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
-            // 
             // pbQuiz
             // 
             pbQuiz.Image = Properties.Resources.images_removebg_preview__1_;
@@ -168,6 +144,30 @@
             pbQuiz.TabIndex = 9;
             pbQuiz.TabStop = false;
             // 
+            // btnSair
+            // 
+            btnSair.BackColor = Color.FromArgb(255, 128, 128);
+            btnSair.Font = new Font("Showcard Gothic", 12F);
+            btnSair.Location = new Point(281, 368);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(212, 70);
+            btnSair.TabIndex = 4;
+            btnSair.Text = "Deslogar";
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += this.btnSair_Click_1;
+            btnSair.MouseEnter += this.btnSair_MouseEnter;
+            btnSair.MouseLeave += this.btnSair_MouseLeave_1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.images_removebg_preview;
+            pictureBox4.Location = new Point(499, 368);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(77, 70);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            // 
             // btnTelaPergunta
             // 
             btnTelaPergunta.Location = new Point(47, 238);
@@ -177,7 +177,7 @@
             btnTelaPergunta.Text = "Adicionar pergunta";
             btnTelaPergunta.UseVisualStyleBackColor = true;
             btnTelaPergunta.Visible = false;
-            btnTelaPergunta.Click += btnTelaPergunta_Click;
+            btnTelaPergunta.Click += this.btnTelaPergunta_Click;
             // 
             // lblAvisoAdmin
             // 
@@ -211,12 +211,12 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TelaPrincipal";
             Text = " ";
-            Load += TelaPrincipal_Load;
+            Load += this.TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbQuiz).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,12 +227,12 @@
         private Button btnRaking;
         private Button btnPerfil;
         private Button btnHistorico;
-        private Button btnSair;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pbPerfil;
-        private PictureBox pictureBox4;
         private PictureBox pbQuiz;
+        private Button btnSair;
+        private PictureBox pictureBox4;
         private Button btnTelaPergunta;
         private Label lblAvisoAdmin;
     }
