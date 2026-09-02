@@ -83,7 +83,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
                 if (lblPontosTotais.Text == "80")
                 {
-
+                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Preparado");
                 }
             }
 
@@ -105,7 +105,7 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 if (lblSequencia.Text == "10")
                 {
-                    
+                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Perfect");
                 }
                 historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
             }

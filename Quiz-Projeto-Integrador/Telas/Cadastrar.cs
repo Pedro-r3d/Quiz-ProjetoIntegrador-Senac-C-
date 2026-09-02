@@ -58,7 +58,6 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 DateOnly dataDeNascimento = DateOnly.FromDateTime(dtpDataDeNascimento.Value);
                 var usuario = new Usuario(senha: senhaCryptografada, nickname: nickname, nome: nome, dataDeNascimento: dataDeNascimento);
-
                 await UsuarioRepositories.Adicionar(usuario);
                 MessageBox.Show("Cadastro realizado", "Nova conta criada", MessageBoxButtons.OK);
                 this.Close();

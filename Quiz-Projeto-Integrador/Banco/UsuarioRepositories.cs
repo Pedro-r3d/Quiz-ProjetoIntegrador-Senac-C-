@@ -31,6 +31,21 @@ namespace Quiz_Projeto_Integrador.Banco
                    }
                  );
         }
+
+        public static async Task AdicionarConquistas(int usuarioId)
+        {
+            await ConexaoBanco.CriarConexao().QueryAsync(
+                @"
+                INSERT INTO
+                    conquistas
+                    (@usuarioId, false, false, false)
+                ",
+                new
+                {
+                    UsuarioId = usuarioId
+                }
+                );
+        }
         
         public static async Task<IEnumerable<UsuarioRankingDto>> ObterRanking()
         {
@@ -365,6 +380,18 @@ namespace Quiz_Projeto_Integrador.Banco
                 }
                 );
             return conquistas;
+        }
+
+        public static async Task DesbloquearConquista(int id, string conquista)
+        {
+            var desbloquear = await ConexaoBanco.CriarConexao().ExecuteAsync(
+                @"
+                UPDATE
+                    Conquistas
+                SET
+                    @conquista = true
+                "
+                );
         }
 
     }
