@@ -106,6 +106,7 @@
             Controls.Add(btnVoltar);
             Controls.Add(btnSelecionar);
             Controls.Add(dgvHistorico);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Historico";
             Text = "Historico";
             Load += Historico_Load;

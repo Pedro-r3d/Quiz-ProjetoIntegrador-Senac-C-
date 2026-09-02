@@ -7,7 +7,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
     public partial class Login : Form
     {
-    private bool ehAdmin = false;
+        private bool ehAdmin = false;
         public Login()
         {
             InitializeComponent();
@@ -25,17 +25,16 @@ namespace Quiz_Projeto_Integrador.Telas
 
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
             int idUsuario = usuario.Id;
-            if (txtLogarNick.Text == "Admin" && txtLogarSenha.Text == "senha") 
+            if (txtLogarNick.Text == "Admin" && txtLogarSenha.Text == "senha")
             {
                 ehAdmin = true;
-
             }
             if (txtLogarSenha.Text == "" || txtLogarNick.Text == "")
             {
                 MessageBox.Show("Informações não preenchidas");
                 return;
             }
-         
+
             if (usuario == null || !usuario.SenhaCorreta(senha))
             {
                 MessageBox.Show("Usuario ou senha incorretos");
@@ -46,7 +45,6 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 this.Hide();
                 new TelaPrincipal(idUsuario, ehAdmin).ShowDialog();
-                this.Show();
             }
 
         }
@@ -54,6 +52,11 @@ namespace Quiz_Projeto_Integrador.Telas
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

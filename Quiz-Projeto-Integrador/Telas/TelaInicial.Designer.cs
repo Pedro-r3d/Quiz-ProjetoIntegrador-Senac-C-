@@ -84,6 +84,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             ForeColor = Color.FromArgb(221, 230, 117);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaInicial";
             Text = "TelaInicial";

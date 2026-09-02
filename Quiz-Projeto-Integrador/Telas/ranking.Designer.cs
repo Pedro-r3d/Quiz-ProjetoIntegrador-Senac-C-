@@ -91,6 +91,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(btnVerPerfil);
             Controls.Add(dgvUsuarios);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ranking";
             ShowIcon = false;
             Text = "ranking";

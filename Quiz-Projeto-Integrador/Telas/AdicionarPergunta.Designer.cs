@@ -48,19 +48,22 @@
             rbDificil = new RadioButton();
             rbMedio = new RadioButton();
             rbFacil = new RadioButton();
-            label8 = new Label();
-            txtTema = new TextBox();
             label9 = new Label();
             nudPontos = new NumericUpDown();
+            groupBox2 = new GroupBox();
+            rbJava = new RadioButton();
+            rbCsharp = new RadioButton();
+            rbSql = new RadioButton();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudPontos).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 25F);
-            label1.Location = new Point(181, 9);
+            label1.Location = new Point(175, -4);
             label1.Name = "label1";
             label1.Size = new Size(477, 62);
             label1.TabIndex = 0;
@@ -96,7 +99,7 @@
             // 
             // txtQuestao
             // 
-            txtQuestao.Location = new Point(165, 119);
+            txtQuestao.Location = new Point(159, 102);
             txtQuestao.Name = "txtQuestao";
             txtQuestao.Size = new Size(245, 31);
             txtQuestao.TabIndex = 5;
@@ -104,7 +107,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(248, 91);
+            label2.Location = new Point(242, 74);
             label2.Name = "label2";
             label2.Size = new Size(82, 25);
             label2.TabIndex = 6;
@@ -113,7 +116,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(69, 150);
+            label3.Location = new Point(69, 136);
             label3.Name = "label3";
             label3.Size = new Size(113, 25);
             label3.TabIndex = 7;
@@ -122,7 +125,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(69, 225);
+            label4.Location = new Point(71, 212);
             label4.Name = "label4";
             label4.Size = new Size(111, 25);
             label4.TabIndex = 8;
@@ -131,7 +134,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(347, 150);
+            label5.Location = new Point(347, 136);
             label5.Name = "label5";
             label5.Size = new Size(112, 25);
             label5.TabIndex = 9;
@@ -140,7 +143,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(347, 222);
+            label6.Location = new Point(347, 211);
             label6.Name = "label6";
             label6.Size = new Size(114, 25);
             label6.TabIndex = 10;
@@ -149,7 +152,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(258, 300);
+            label7.Location = new Point(242, 303);
             label7.Name = "label7";
             label7.Size = new Size(84, 25);
             label7.TabIndex = 11;
@@ -157,14 +160,14 @@
             // 
             // txtResposta
             // 
-            txtResposta.Location = new Point(175, 328);
+            txtResposta.Location = new Point(175, 344);
             txtResposta.Name = "txtResposta";
             txtResposta.Size = new Size(245, 31);
             txtResposta.TabIndex = 12;
             // 
             // button1
             // 
-            button1.Location = new Point(628, 382);
+            button1.Location = new Point(651, 391);
             button1.Name = "button1";
             button1.Size = new Size(137, 56);
             button1.TabIndex = 13;
@@ -183,12 +186,12 @@
             groupBox1.Controls.Add(rbDificil);
             groupBox1.Controls.Add(rbMedio);
             groupBox1.Controls.Add(rbFacil);
-            groupBox1.Location = new Point(552, 83);
+            groupBox1.Location = new Point(552, 72);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(236, 126);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Nivel";
             // 
             // rbDificil
             // 
@@ -223,26 +226,10 @@
             rbFacil.Text = "Facil";
             rbFacil.UseVisualStyleBackColor = true;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(558, 225);
-            label8.Name = "label8";
-            label8.Size = new Size(53, 25);
-            label8.TabIndex = 15;
-            label8.Text = "Tema";
-            // 
-            // txtTema
-            // 
-            txtTema.Location = new Point(558, 253);
-            txtTema.Name = "txtTema";
-            txtTema.Size = new Size(230, 31);
-            txtTema.TabIndex = 16;
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(558, 300);
+            label9.Location = new Point(561, 326);
             label9.Name = "label9";
             label9.Size = new Size(67, 25);
             label9.TabIndex = 17;
@@ -251,10 +238,56 @@
             // 
             // nudPontos
             // 
-            nudPontos.Location = new Point(558, 329);
+            nudPontos.Location = new Point(552, 354);
             nudPontos.Name = "nudPontos";
             nudPontos.Size = new Size(88, 31);
             nudPontos.TabIndex = 18;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(rbJava);
+            groupBox2.Controls.Add(rbCsharp);
+            groupBox2.Controls.Add(rbSql);
+            groupBox2.Location = new Point(552, 204);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(236, 106);
+            groupBox2.TabIndex = 19;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Tema";
+            // 
+            // rbJava
+            // 
+            rbJava.AutoSize = true;
+            rbJava.Location = new Point(142, 30);
+            rbJava.Name = "rbJava";
+            rbJava.Size = new Size(70, 29);
+            rbJava.TabIndex = 2;
+            rbJava.TabStop = true;
+            rbJava.Text = "Java";
+            rbJava.UseVisualStyleBackColor = true;
+            // 
+            // rbCsharp
+            // 
+            rbCsharp.AutoSize = true;
+            rbCsharp.Location = new Point(6, 68);
+            rbCsharp.Name = "rbCsharp";
+            rbCsharp.Size = new Size(59, 29);
+            rbCsharp.TabIndex = 1;
+            rbCsharp.TabStop = true;
+            rbCsharp.Text = "C#";
+            rbCsharp.UseVisualStyleBackColor = true;
+            rbCsharp.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // rbSql
+            // 
+            rbSql.AutoSize = true;
+            rbSql.Location = new Point(6, 30);
+            rbSql.Name = "rbSql";
+            rbSql.Size = new Size(69, 29);
+            rbSql.TabIndex = 0;
+            rbSql.TabStop = true;
+            rbSql.Text = "SQL";
+            rbSql.UseVisualStyleBackColor = true;
             // 
             // AdicionarPergunta
             // 
@@ -262,10 +295,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(230, 200, 87);
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox2);
             Controls.Add(nudPontos);
             Controls.Add(label9);
-            Controls.Add(txtTema);
-            Controls.Add(label8);
             Controls.Add(groupBox1);
             Controls.Add(button1);
             Controls.Add(txtResposta);
@@ -281,12 +313,15 @@
             Controls.Add(txtAlternativaA);
             Controls.Add(txtAlternativaC);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AdicionarPergunta";
             Text = "AdicionarPergunta";
             Load += AdicionarPergunta_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudPontos).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -312,9 +347,11 @@
         private RadioButton rbDificil;
         private RadioButton rbMedio;
         private RadioButton rbFacil;
-        private Label label8;
-        private TextBox txtTema;
         private Label label9;
         private NumericUpDown nudPontos;
+        private GroupBox groupBox2;
+        private RadioButton rbJava;
+        private RadioButton rbCsharp;
+        private RadioButton rbSql;
     }
 }

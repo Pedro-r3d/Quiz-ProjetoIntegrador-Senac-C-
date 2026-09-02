@@ -70,7 +70,6 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnPerfil_MouseEnter(object sender, EventArgs e)
         {
             btnPerfil.BackColor = Color.LightGreen;
-
         }
 
         private void btnHistorico_MouseEnter(object sender, EventArgs e)
@@ -100,20 +99,17 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnSair_Click_1(object sender, EventArgs e)
         {
-
-            btnTelaPergunta.Visible = false;
-            lblAvisoAdmin.Visible = false;
+            EhAdmin = false;
             this.Close();
-
         }
 
         private void btnSair_MouseEnter(object sender, EventArgs e)
         {
-            btnSair.BackColor = Color.LightCoral;
+            btnSair.BackColor = Color.Red;
         }
         private void btnSair_MouseLeave_1(object sender, EventArgs e)
         {
-            btnSair.BackColor = Color.FromArgb(133, 6, 235);
+            btnSair.BackColor = Color.FromArgb(255, 128, 128);
 
         }
 
@@ -123,9 +119,18 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 btnTelaPergunta.Visible = true;
                 lblAvisoAdmin.Visible = true;
+                btnPerfil.Visible = false;
+                pbPerfil.Visible = false;
+                pbQuiz.Visible = false;
+                btnQuiz.Visible = false;
+            }
+            else if (!EhAdmin)
+            {
+                btnTelaPergunta.Visible = false;
+                lblAvisoAdmin.Visible = false;
             }
           
-            }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
