@@ -43,3 +43,13 @@ EscolhaC varchar(255) not null,
 EscolhaD varchar(255) not null,
 foreign key (PerguntaId) references Pergunta(Id)
 )
+
+
+create table Conquistas(
+Id serial primary key,
+UsuarioId int not null,
+Disciplina bool not null,
+Perfect bool not null,
+Preparado bool not null,
+foreign key (UsuarioId) references Usuario(Id)
+)
