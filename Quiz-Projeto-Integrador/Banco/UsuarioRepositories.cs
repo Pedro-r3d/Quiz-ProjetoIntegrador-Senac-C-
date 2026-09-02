@@ -38,6 +38,8 @@ namespace Quiz_Projeto_Integrador.Banco
                 @"
                 INSERT INTO
                     conquistas
+                    (usuarioId, Disciplina, Perfect, Preparado)
+                VALUES
                     (@usuarioId, false, false, false)
                 ",
                 new
@@ -366,9 +368,8 @@ namespace Quiz_Projeto_Integrador.Banco
                 @"
                 SELECT
                     Id,
-                    Disciplina,
-                    Perfect,
-                    Preparado
+                    UsuarioId,
+                    Conquista
                 FROM
                     Conquistas
                 WHERE
@@ -386,10 +387,11 @@ namespace Quiz_Projeto_Integrador.Banco
         {
             var desbloquear = await ConexaoBanco.CriarConexao().ExecuteAsync(
                 @"
-                UPDATE
+                INSERT INTO
                     Conquistas
-                SET
-                    @conquista = true
+                    (UsuarioId, Conquista)
+                VALUES
+                    (@usuarioId, @conquista)
                 "
                 );
         }

@@ -82,7 +82,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 label5.Text = "";
                 btnSair.Visible = true;
 
-                if (lblPontosTotais.Text == "80")
+                if (lblPerguntaAtual.Text == "8")
                 {
                     await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Preparado");
                 }

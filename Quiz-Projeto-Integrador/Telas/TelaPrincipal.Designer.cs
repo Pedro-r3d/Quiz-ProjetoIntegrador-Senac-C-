@@ -211,7 +211,6 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TelaPrincipal";
             Text = " ";
-            Load += TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();

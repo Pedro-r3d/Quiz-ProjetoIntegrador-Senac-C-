@@ -33,19 +33,19 @@ namespace Quiz_Projeto_Integrador.Telas
             lblTema.Text = usuario.Tema;
 
             var conquista = await UsuarioRepositories.VerificarConquistas(usuarioLogado);
-            
-            if (conquista.Disciplina == true)
+
+            if (conquista != null)
             {
+                if (conquista.Conquista == "Perfect")
+                {
 
+                }
+
+                if (conquista.Conquista == "Preparado")
+                {
+
+                }
             }
-
-            if (conquista.Perfect == true)
-            {
-
-            }
-
-            if (conquista.Preparado == true) { } 
-
         }
 
         private void label1_Click(object sender, EventArgs e)

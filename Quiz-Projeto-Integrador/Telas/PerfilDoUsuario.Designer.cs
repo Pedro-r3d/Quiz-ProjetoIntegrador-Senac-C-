@@ -39,11 +39,12 @@
             lblNivelNumber = new Label();
             lblTemasAcertados = new Label();
             lblConquistas = new Label();
-            label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             lblTema = new Label();
-            label5 = new Label();
+            pcbPreparado = new PictureBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pcbPreparado).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblPerguntasRespondidas
@@ -152,34 +153,12 @@
             // 
             lblConquistas.AutoSize = true;
             lblConquistas.Font = new Font("Segoe UI", 14F);
-            lblConquistas.Location = new Point(571, 266);
+            lblConquistas.Location = new Point(563, 261);
             lblConquistas.Name = "lblConquistas";
             lblConquistas.Size = new Size(158, 38);
             lblConquistas.TabIndex = 16;
             lblConquistas.Text = "Conquistas:";
             lblConquistas.Click += lblConquistas_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveCaptionText;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(519, 332);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 54);
-            label1.TabIndex = 17;
-            label1.Text = "ccc";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ActiveCaptionText;
-            label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(711, 332);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 54);
-            label2.TabIndex = 18;
-            label2.Text = "ccc";
             // 
             // label3
             // 
@@ -199,28 +178,37 @@
             lblTema.TabIndex = 20;
             lblTema.Text = "Tema";
             // 
-            // label5
+            // pcbPreparado
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ActiveCaptionText;
-            label5.Font = new Font("Segoe UI", 20F);
-            label5.Location = new Point(615, 332);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 54);
-            label5.TabIndex = 22;
-            label5.Text = "ccc";
+            pcbPreparado.Image = Properties.Resources._12491;
+            pcbPreparado.Location = new Point(648, 317);
+            pcbPreparado.Name = "pcbPreparado";
+            pcbPreparado.Size = new Size(87, 94);
+            pcbPreparado.SizeMode = PictureBoxSizeMode.Zoom;
+            pcbPreparado.TabIndex = 23;
+            pcbPreparado.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.image_removebg_preview;
+            pictureBox1.InitialImage = Properties.Resources.image_removebg_preview2;
+            pictureBox1.Location = new Point(537, 276);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(105, 135);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
             // 
             // PerfilDoUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label5);
+            Controls.Add(lblConquistas);
+            Controls.Add(pictureBox1);
+            Controls.Add(pcbPreparado);
             Controls.Add(lblTema);
             Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(lblConquistas);
             Controls.Add(lblTemasAcertados);
             Controls.Add(lblNivelNumber);
             Controls.Add(lblNivel);
@@ -234,6 +222,8 @@
             Name = "PerfilDoUsuario";
             Text = "Perfil do usuário";
             Load += PerfilDoUsuario_Load;
+            ((System.ComponentModel.ISupportInitialize)pcbPreparado).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,10 +240,9 @@
         private Label lblNivelNumber;
         private Label lblTemasAcertados;
         private Label lblConquistas;
-        private Label label1;
-        private Label label2;
         private Label label3;
         private Label lblTema;
-        private Label label5;
+        private PictureBox pcbPreparado;
+        private PictureBox pictureBox1;
     }
 }
