@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,7 +25,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         public QuizAlternativa(int idUsuario, bool ehTreino)
         {
-            InitializeComponent();  
+            InitializeComponent();
 
             ehTreino_ = ehTreino;
 
@@ -46,20 +47,20 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (ehTreino_ && perguntaAtual >= perguntas.Count)
             {
-              
-                    MessageBox.Show("Quiz finalizado. reiniciando...");
-                    perguntaAtual = 0;
-                
+
+                MessageBox.Show("Quiz finalizado. reiniciando...");
+                perguntaAtual = 0;
+
             }
 
-            if (!ehTreino_ && perguntaAtual >= perguntas.Count)
-            {       
-                    new QuizResultados(pontos, acertos).ShowDialog();
-                    this.Close();
-                    return;
-                
+            if (!ehTreino_ && perguntaAtual >= 10)
+            {
+                new QuizResultados(pontos, acertos).ShowDialog();
+                this.Close();
+                return;
+
             }
-               var pergunta = perguntas[perguntaAtual];
+            var pergunta = perguntas[perguntaAtual];
 
 
 
@@ -105,12 +106,12 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 if (lblSequencia.Text == "10")
                 {
-                    
+
                 }
                 historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
             }
-           await MostrarPergunta();
-          
+            await MostrarPergunta();
+
         }
 
         public async void button1_Click(object sender, EventArgs e)
@@ -119,9 +120,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
             var pergunta = perguntas[perguntaAtual];
 
-           
 
-             respostaEscolhida = "";
+
+            respostaEscolhida = "";
 
             if (rb1.Checked)
             {
@@ -162,7 +163,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 }
                 await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
                 perguntaAtual++;
-               await MostrarPergunta();
+                await MostrarPergunta();
             }
             else
             {
@@ -204,6 +205,16 @@ namespace Quiz_Projeto_Integrador.Telas
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblPergunta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

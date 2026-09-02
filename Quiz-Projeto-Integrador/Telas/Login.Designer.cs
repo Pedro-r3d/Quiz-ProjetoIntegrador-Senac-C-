@@ -119,6 +119,7 @@
             Controls.Add(label1);
             Controls.Add(txtLogarNick);
             Controls.Add(lblLogarNick);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Login";
             Text = "Login";
             Load += Login_Load;

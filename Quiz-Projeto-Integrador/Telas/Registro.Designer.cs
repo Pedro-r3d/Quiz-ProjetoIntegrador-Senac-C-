@@ -101,6 +101,7 @@
             Controls.Add(label1);
             Controls.Add(lblQuiz);
             Controls.Add(dgvRegistro);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Registro";
             Text = "Registro";
             Load += Registro_Load;

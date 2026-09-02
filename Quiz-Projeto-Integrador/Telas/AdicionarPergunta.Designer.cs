@@ -99,7 +99,7 @@
             // 
             // txtQuestao
             // 
-            txtQuestao.Location = new Point(165, 119);
+            txtQuestao.Location = new Point(159, 102);
             txtQuestao.Name = "txtQuestao";
             txtQuestao.Size = new Size(245, 31);
             txtQuestao.TabIndex = 5;
@@ -107,7 +107,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(248, 91);
+            label2.Location = new Point(242, 74);
             label2.Name = "label2";
             label2.Size = new Size(82, 25);
             label2.TabIndex = 6;
@@ -116,7 +116,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(69, 150);
+            label3.Location = new Point(69, 136);
             label3.Name = "label3";
             label3.Size = new Size(113, 25);
             label3.TabIndex = 7;
@@ -125,7 +125,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(69, 225);
+            label4.Location = new Point(71, 212);
             label4.Name = "label4";
             label4.Size = new Size(111, 25);
             label4.TabIndex = 8;
@@ -134,7 +134,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(347, 150);
+            label5.Location = new Point(347, 136);
             label5.Name = "label5";
             label5.Size = new Size(112, 25);
             label5.TabIndex = 9;
@@ -143,7 +143,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(347, 222);
+            label6.Location = new Point(347, 211);
             label6.Name = "label6";
             label6.Size = new Size(114, 25);
             label6.TabIndex = 10;
@@ -152,7 +152,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(258, 300);
+            label7.Location = new Point(242, 303);
             label7.Name = "label7";
             label7.Size = new Size(84, 25);
             label7.TabIndex = 11;
@@ -160,14 +160,14 @@
             // 
             // txtResposta
             // 
-            txtResposta.Location = new Point(175, 328);
+            txtResposta.Location = new Point(175, 344);
             txtResposta.Name = "txtResposta";
             txtResposta.Size = new Size(245, 31);
             txtResposta.TabIndex = 12;
             // 
             // button1
             // 
-            button1.Location = new Point(628, 382);
+            button1.Location = new Point(651, 391);
             button1.Name = "button1";
             button1.Size = new Size(137, 56);
             button1.TabIndex = 13;
@@ -229,7 +229,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(685, 317);
+            label9.Location = new Point(561, 326);
             label9.Name = "label9";
             label9.Size = new Size(67, 25);
             label9.TabIndex = 17;
@@ -238,7 +238,7 @@
             // 
             // nudPontos
             // 
-            nudPontos.Location = new Point(676, 345);
+            nudPontos.Location = new Point(552, 354);
             nudPontos.Name = "nudPontos";
             nudPontos.Size = new Size(88, 31);
             nudPontos.TabIndex = 18;
@@ -313,6 +313,7 @@
             Controls.Add(txtAlternativaA);
             Controls.Add(txtAlternativaC);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AdicionarPergunta";
             Text = "AdicionarPergunta";
             Load += AdicionarPergunta_Load;

@@ -208,6 +208,7 @@
             Controls.Add(btnPerfil);
             Controls.Add(btnRaking);
             Controls.Add(btnQuiz);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TelaPrincipal";
             Text = " ";
             Load += TelaPrincipal_Load;

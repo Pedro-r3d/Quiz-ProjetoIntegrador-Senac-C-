@@ -125,6 +125,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Font = new Font("Microsoft Sans Serif", 8.25F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             Name = "QuizResultados";
             Text = "QuizResultados";

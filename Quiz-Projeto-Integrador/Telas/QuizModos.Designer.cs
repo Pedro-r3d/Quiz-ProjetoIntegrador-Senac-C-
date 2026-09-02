@@ -134,6 +134,7 @@
             Controls.Add(button2);
             Controls.Add(btnModoNormal);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "QuizModos";
             Text = "QuizModos";
             Load += QuizModos_Load;
