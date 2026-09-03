@@ -270,7 +270,6 @@
             btnSair.Text = "Sair";
             btnSair.UseVisualStyleBackColor = false;
             btnSair.Visible = false;
-            btnSair.Click += btnSair_Click;
             // 
             // QuizAlternativa
             // 

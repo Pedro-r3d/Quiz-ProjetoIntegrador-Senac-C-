@@ -47,7 +47,10 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (ehTreino_ && perguntaAtual >= perguntas.Count)
             {
-
+                if (perguntaAtual == 8)
+                {
+                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Preparado");
+                }
                 MessageBox.Show("Quiz finalizado. reiniciando...");
                 perguntaAtual = 0;
 
@@ -82,7 +85,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 label5.Text = "";
                 btnSair.Visible = true;
 
-                if (lblPerguntaAtual.Text == "8")
+                if (lblSequencia.Text == "8")
                 {
                     await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Preparado");
                 }
@@ -176,7 +179,9 @@ namespace Quiz_Projeto_Integrador.Telas
                 else
                 {
                     perguntaAtual++;
-                }
+                } 
+                
+                await MostrarPergunta();
             }
             rb1.Checked = false;
             rb2.Checked = false;
