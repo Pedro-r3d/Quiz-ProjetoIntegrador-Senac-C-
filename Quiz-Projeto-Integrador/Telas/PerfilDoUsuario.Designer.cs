@@ -42,9 +42,9 @@
             label3 = new Label();
             lblTema = new Label();
             pcbPreparado = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pcbPerfect = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pcbPreparado).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbPerfect).BeginInit();
             SuspendLayout();
             // 
             // lblPerguntasRespondidas
@@ -188,16 +188,16 @@
             pcbPreparado.TabIndex = 23;
             pcbPreparado.TabStop = false;
             // 
-            // pictureBox1
+            // pcbPerfect
             // 
-            pictureBox1.Image = Properties.Resources.image_removebg_preview;
-            pictureBox1.InitialImage = Properties.Resources.image_removebg_preview2;
-            pictureBox1.Location = new Point(537, 276);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 135);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
+            pcbPerfect.Image = Properties.Resources.image_removebg_preview;
+            pcbPerfect.InitialImage = Properties.Resources.image_removebg_preview2;
+            pcbPerfect.Location = new Point(537, 276);
+            pcbPerfect.Name = "pcbPerfect";
+            pcbPerfect.Size = new Size(105, 135);
+            pcbPerfect.SizeMode = PictureBoxSizeMode.Zoom;
+            pcbPerfect.TabIndex = 24;
+            pcbPerfect.TabStop = false;
             // 
             // PerfilDoUsuario
             // 
@@ -205,7 +205,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(lblConquistas);
-            Controls.Add(pictureBox1);
+            Controls.Add(pcbPerfect);
             Controls.Add(pcbPreparado);
             Controls.Add(lblTema);
             Controls.Add(label3);
@@ -223,7 +223,7 @@
             Text = "Perfil do usuário";
             Load += PerfilDoUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)pcbPreparado).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbPerfect).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,6 +243,6 @@
         private Label label3;
         private Label lblTema;
         private PictureBox pcbPreparado;
-        private PictureBox pictureBox1;
+        private PictureBox pcbPerfect;
     }
 }
