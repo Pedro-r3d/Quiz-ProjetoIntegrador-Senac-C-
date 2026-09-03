@@ -57,9 +57,9 @@
             btnQuiz.TabIndex = 0;
             btnQuiz.Text = "Iniciar quiz";
             btnQuiz.UseVisualStyleBackColor = false;
-            btnQuiz.Click += this.btnQuiz_Click;
-            btnQuiz.MouseEnter += this.btnQuiz_MouseEnter;
-            btnQuiz.MouseLeave += this.btnQuiz_MouseLeave;
+            btnQuiz.Click += btnQuiz_Click;
+            btnQuiz.MouseEnter += btnQuiz_MouseEnter;
+            btnQuiz.MouseLeave += btnQuiz_MouseLeave;
             // 
             // btnRaking
             // 
@@ -71,9 +71,9 @@
             btnRaking.TabIndex = 1;
             btnRaking.Text = "Ranking";
             btnRaking.UseVisualStyleBackColor = false;
-            btnRaking.Click += this.btnRaking_Click;
-            btnRaking.MouseEnter += this.btnRaking_MouseEnter;
-            btnRaking.MouseLeave += this.btnRaking_MouseLeave;
+            btnRaking.Click += btnRaking_Click;
+            btnRaking.MouseEnter += btnRaking_MouseEnter;
+            btnRaking.MouseLeave += btnRaking_MouseLeave;
             // 
             // btnPerfil
             // 
@@ -85,10 +85,10 @@
             btnPerfil.TabIndex = 2;
             btnPerfil.Text = "Ver perfil";
             btnPerfil.UseVisualStyleBackColor = false;
-            btnPerfil.Click += this.btnPerfil_Click;
-            btnPerfil.Enter += this.btnPerfil_Enter;
-            btnPerfil.MouseEnter += this.btnPerfil_MouseEnter;
-            btnPerfil.MouseLeave += this.btnPerfil_MouseLeave;
+            btnPerfil.Click += btnPerfil_Click;
+            btnPerfil.Enter += btnPerfil_Enter;
+            btnPerfil.MouseEnter += btnPerfil_MouseEnter;
+            btnPerfil.MouseLeave += btnPerfil_MouseLeave;
             // 
             // btnHistorico
             // 
@@ -100,9 +100,9 @@
             btnHistorico.TabIndex = 3;
             btnHistorico.Text = "Histórico";
             btnHistorico.UseVisualStyleBackColor = false;
-            btnHistorico.Click += this.btnHistorico_Click;
-            btnHistorico.MouseEnter += this.btnHistorico_MouseEnter;
-            btnHistorico.MouseLeave += this.btnHistorico_MouseLeave;
+            btnHistorico.Click += btnHistorico_Click;
+            btnHistorico.MouseEnter += btnHistorico_MouseEnter;
+            btnHistorico.MouseLeave += btnHistorico_MouseLeave;
             // 
             // pictureBox1
             // 
@@ -154,9 +154,9 @@
             btnSair.TabIndex = 4;
             btnSair.Text = "Deslogar";
             btnSair.UseVisualStyleBackColor = false;
-            btnSair.Click += this.btnSair_Click_1;
-            btnSair.MouseEnter += this.btnSair_MouseEnter;
-            btnSair.MouseLeave += this.btnSair_MouseLeave_1;
+            btnSair.Click += btnSair_Click_1;
+            btnSair.MouseEnter += btnSair_MouseEnter;
+            btnSair.MouseLeave += btnSair_MouseLeave_1;
             // 
             // pictureBox4
             // 
@@ -177,7 +177,7 @@
             btnTelaPergunta.Text = "Adicionar pergunta";
             btnTelaPergunta.UseVisualStyleBackColor = true;
             btnTelaPergunta.Visible = false;
-            btnTelaPergunta.Click += this.btnTelaPergunta_Click;
+            btnTelaPergunta.Click += btnTelaPergunta_Click;
             // 
             // lblAvisoAdmin
             // 
@@ -211,6 +211,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TelaPrincipal";
             Text = " ";
+            Load += TelaPrincipal_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPerfil).EndInit();

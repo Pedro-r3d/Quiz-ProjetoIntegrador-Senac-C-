@@ -21,12 +21,23 @@ namespace Quiz_Projeto_Integrador.Telas
 
         public async void Historico_Load(object sender, EventArgs e)
         {
+            
             var historico = await UsuarioRepositories.PegarHistorico(usuarioLogado);
+            if (historico == null || !historico.Any()) {
+                MessageBox.Show("Nenhum registro de jogo");
+                btnSelecionar.Enabled = false;
+                return;
+            }
             dgvHistorico.DataSource = historico;
         }
 
-        private async void btnSelecionar_Click(object sender, EventArgs e)
+        public async void btnSelecionar_Click(object sender, EventArgs e)
         {
+            if(dgvHistorico.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione uma partida");
+                return;
+            }
             int quizId = (int)dgvHistorico.SelectedCells[0].Value;
             var Registro = await UsuarioRepositories.PegarIdRegistro(quizId);
             int id = Registro.HistoricoId;

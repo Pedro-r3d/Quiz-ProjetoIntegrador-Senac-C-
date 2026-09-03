@@ -42,6 +42,19 @@ namespace Quiz_Projeto_Integrador.Telas
         bool correta;
 
 
+        private async void QuizAlternativa_Load(object sender, EventArgs e)
+        {
+            var usuario = await UsuarioRepositories.SelectPorId(usuarioLogado);
+
+            nicknameUsuario = usuario.Nickname;
+
+            perguntas = (await UsuarioRepositories.PegarPerguntaAlternativas()).ToList();
+
+            perguntaAtual = 0;
+           
+            await MostrarPergunta();
+
+        }
         public async Task MostrarPergunta()
         {
 
@@ -59,6 +72,11 @@ namespace Quiz_Projeto_Integrador.Telas
                 this.Close();
                 return;
 
+            }
+
+            if (sequencia == 10)
+            {
+                await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Perfect");
             }
             var pergunta = perguntas[perguntaAtual];
 
@@ -82,7 +100,7 @@ namespace Quiz_Projeto_Integrador.Telas
                 label5.Text = "";
                 btnSair.Visible = true;
 
-                if (lblPerguntaAtual.Text == "8")
+                if (perguntaAtual == 7)
                 {
                     await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Preparado");
                 }
@@ -93,35 +111,11 @@ namespace Quiz_Projeto_Integrador.Telas
             rb3.Text = pergunta.EscolhaC;
             rb4.Text = pergunta.EscolhaD;
         }
-        private async void QuizAlternativa_Load(object sender, EventArgs e)
-        {
-            var usuario = await UsuarioRepositories.SelectPorId(usuarioLogado);
-
-            nicknameUsuario = usuario.Nickname;
-
-            perguntas = (await UsuarioRepositories.PegarPerguntaAlternativas()).ToList();
-
-            perguntaAtual = 0;
-            if (!ehTreino_)
-            {
-                if (lblSequencia.Text == "10")
-                {
-                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Perfect");
-                }
-                historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
-            }
-            await MostrarPergunta();
-
-        }
 
         public async void button1_Click(object sender, EventArgs e)
         {
 
-
             var pergunta = perguntas[perguntaAtual];
-
-
-
             respostaEscolhida = "";
 
             if (rb1.Checked)
@@ -150,23 +144,30 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (!ehTreino_)
             {
+                if (historicoId == 0)
+                {
+                    historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
+                }
+                await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
+
                 if (correta)
                 {
                     pontos += pergunta.Pontos;
                     await UsuarioRepositories.AdicionarPontos(historicoId, pergunta.Pontos);
+
                     sequencia++;
                     acertos++;
                 }
+              
                 else
                 {
                     sequencia = 0;
                 }
-                await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
                 perguntaAtual++;
-                await MostrarPergunta();
             }
             else
             {
+ 
                 if (!correta)
                 {
                     perguntaAtual = 0;
@@ -180,6 +181,9 @@ namespace Quiz_Projeto_Integrador.Telas
             rb2.Checked = false;
             rb3.Checked = false;
             rb4.Checked = false;
+
+            await MostrarPergunta();
+
         }
 
         private void lblValorPergunta_Click(object sender, EventArgs e)

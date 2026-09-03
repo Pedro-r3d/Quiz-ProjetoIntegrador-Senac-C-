@@ -35,7 +35,13 @@ namespace Quiz_Projeto_Integrador.Telas
             dgvUsuarios.AllowUserToAddRows = false;
 
             var usuarios = await UsuarioRepositories.ObterRanking();
+            if (usuarios == null || !usuarios.Any())
+            {
+                MessageBox.Show("Não há usuarios criados");
+                btnVerPerfil.Enabled = false;
+                return;
 
+               }            
             dgvUsuarios.DataSource = new BindingList<
                 UsuarioRankingDto>((IList<
                     UsuarioRankingDto>)usuarios.ToList());
@@ -72,6 +78,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnVerPerfil_Click(object sender, EventArgs e)
         {
+            
             int id = (int)dgvUsuarios.SelectedCells[0].Value;
             this.Close();
             new PerfilDoUsuario(id).ShowDialog();

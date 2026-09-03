@@ -15,7 +15,7 @@ namespace Quiz_Projeto_Integrador.Telas
     public partial class TelaPrincipal : Form
     {
         public int usuarioLogado;
-        bool EhAdmin = false;
+        bool EhAdmin;
 
         public TelaPrincipal(int idUsuario, bool ehAdmin)
         {
@@ -116,12 +116,13 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
-        private async Task TelaPrincipal_Load(object sender, EventArgs e)
+        private async void TelaPrincipal_Load_1(object sender, EventArgs e)
         {
             if (EhAdmin)
             {
                 btnTelaPergunta.Visible = true;
                 lblAvisoAdmin.Visible = true;
+
                 btnPerfil.Visible = false;
                 pbPerfil.Visible = false;
                 pbQuiz.Visible = false;
@@ -131,8 +132,13 @@ namespace Quiz_Projeto_Integrador.Telas
             {
                 btnTelaPergunta.Visible = false;
                 lblAvisoAdmin.Visible = false;
+
+                btnPerfil.Visible = true;
+                pbPerfil.Visible = true;
+                pbQuiz.Visible = true;
+                btnQuiz.Visible = true;
             }
-          
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -142,7 +148,9 @@ namespace Quiz_Projeto_Integrador.Telas
 
         private void btnTelaPergunta_Click(object sender, EventArgs e)
         {
-            new AdicionarPergunta().Show();
+            new AdicionarPergunta().ShowDialog();
         }
+
+        
     }
 }
