@@ -104,10 +104,6 @@ namespace Quiz_Projeto_Integrador.Telas
             perguntaAtual = 0;
             if (!ehTreino_)
             {
-                if (lblSequencia.Text == "10")
-                {
-                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Perfect");
-                }
                 historicoId = await UsuarioRepositories.CriarHistorico(usuarioLogado);
             }
             await MostrarPergunta();
@@ -161,6 +157,12 @@ namespace Quiz_Projeto_Integrador.Telas
                 {
                     sequencia = 0;
                 }
+
+                if (acertos == 10)
+                {
+                    await UsuarioRepositories.DesbloquearConquista(usuarioLogado, "Perfect");
+                }
+
                 await UsuarioRepositories.AdicionarRegistro(historicoId, pergunta.Questao, pergunta.Tema, correta, pergunta.Pontos);
                 perguntaAtual++;
                 await MostrarPergunta();
