@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Quiz_Projeto_Integrador.Banco;
+using Quiz_Projeto_Integrador.Objetos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +23,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
             EhAdmin = ehAdmin;
             usuarioLogado = idUsuario;
+
         }
 
         private void btnQuiz_Click(object sender, EventArgs e)
@@ -113,7 +116,7 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
-        private void TelaPrincipal_Load(object sender, EventArgs e)
+        private async Task TelaPrincipal_Load(object sender, EventArgs e)
         {
             if (EhAdmin)
             {

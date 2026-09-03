@@ -10,20 +10,16 @@ namespace Quiz_Projeto_Integrador.Objetos
     {
         public Conquistas(
             int id,
-            bool disciplina,
-            bool perfect,
-            bool preparado
+            int usuarioId,
+            string conquista
             )
         {
             Id = id;
-            Disciplina = disciplina;
-            Perfect = perfect;
-            Preparado = preparado;
+            UsuarioId = usuarioId;
+            Conquista = conquista;
         }
-
         public int Id { get; set; }
-        public bool Disciplina { get; set; }
-        public bool Perfect { get; set; }
-        public bool Preparado { get; set; }
+        public int UsuarioId { get; set; }
+        public string Conquista { get; set; }
     }
 }
