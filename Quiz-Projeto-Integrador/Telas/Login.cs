@@ -24,6 +24,11 @@ namespace Quiz_Projeto_Integrador.Telas
             string senha = txtLogarSenha.Text;
 
             var usuario = await UsuarioRepositories.ObterNickSenha(nick, senha);
+            if (usuario == null || !usuario.SenhaCorreta(senha))
+            {
+                MessageBox.Show("Usuario ou senha incorretos");
+                return;
+            }
             int idUsuario = usuario.Id;
             if (txtLogarNick.Text == "Admin" && txtLogarSenha.Text == "senha")
             {
@@ -35,11 +40,6 @@ namespace Quiz_Projeto_Integrador.Telas
                 return;
             }
 
-            if (usuario == null || !usuario.SenhaCorreta(senha))
-            {
-                MessageBox.Show("Usuario ou senha incorretos");
-                return;
-            }
 
             if (usuario.SenhaCorreta(senha))
             {
