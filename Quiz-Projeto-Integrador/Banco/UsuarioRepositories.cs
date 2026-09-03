@@ -391,8 +391,13 @@ namespace Quiz_Projeto_Integrador.Banco
                     Conquistas
                     (UsuarioId, Conquista)
                 VALUES
-                    (@usuarioId, @conquista)
-                "
+                    (@id, @conquista)
+                ",
+                new
+                {
+                    Id = id,
+                    Conquista = conquista
+                }
                 );
         }
 
