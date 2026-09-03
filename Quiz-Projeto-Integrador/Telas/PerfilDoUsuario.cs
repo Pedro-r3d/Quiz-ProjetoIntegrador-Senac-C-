@@ -36,14 +36,14 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (conquista != null)
             {
-                if (conquista.Conquista != "Perfect")
+                if (conquista.Conquista == "Perfect")
                 {
-                    pcbPerfect.Visible = false;
+                    pcbPerfect.Visible = true;
                 }
 
-                if (conquista.Conquista != "Preparado")
+                if (conquista.Conquista == "Preparado")
                 {
-                    pcbPreparado.Visible = false;
+                    pcbPreparado.Visible = true;
                 }
             }
         }

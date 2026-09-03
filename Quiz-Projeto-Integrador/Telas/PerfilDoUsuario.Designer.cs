@@ -187,6 +187,7 @@
             pcbPreparado.SizeMode = PictureBoxSizeMode.Zoom;
             pcbPreparado.TabIndex = 23;
             pcbPreparado.TabStop = false;
+            pcbPreparado.Visible = false;
             // 
             // pcbPerfect
             // 
@@ -198,6 +199,7 @@
             pcbPerfect.SizeMode = PictureBoxSizeMode.Zoom;
             pcbPerfect.TabIndex = 24;
             pcbPerfect.TabStop = false;
+            pcbPerfect.Visible = false;
             // 
             // PerfilDoUsuario
             // 
