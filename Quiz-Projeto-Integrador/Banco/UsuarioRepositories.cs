@@ -362,9 +362,9 @@ namespace Quiz_Projeto_Integrador.Banco
             return registro;
         }
 
-        public static async Task<Conquistas>VerificarConquistas(int id)
+        public static async Task<IEnumerable<Conquistas>>VerificarConquistas(int id)
         {
-            var conquistas = await ConexaoBanco.CriarConexao().QueryFirstOrDefaultAsync<Conquistas>(
+            var conquistas = await ConexaoBanco.CriarConexao().QueryAsync<Conquistas>(
                 @"
                 SELECT
                     Id,
@@ -373,7 +373,7 @@ namespace Quiz_Projeto_Integrador.Banco
                 FROM
                     Conquistas
                 WHERE
-                    UsuarioId = @id
+                    UsuarioId = @Id
                 ",
                 new
                 {

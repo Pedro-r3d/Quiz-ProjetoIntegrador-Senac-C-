@@ -15,11 +15,12 @@ namespace Quiz_Projeto_Integrador.Telas
     {
 
         public int usuarioLogado;
-        public PerfilDoUsuario(int idUsuario) { 
+        public PerfilDoUsuario(int idUsuario)
+        {
             InitializeComponent();
 
             usuarioLogado = idUsuario;
-        
+
         }
 
         private async void PerfilDoUsuario_Load(object sender, EventArgs e)
@@ -36,14 +37,17 @@ namespace Quiz_Projeto_Integrador.Telas
 
             if (conquista != null)
             {
-                if (conquista.Conquista == "Perfect")
+                foreach (var item in conquista)
                 {
-                    pcbPerfect.Visible = true;
-                }
+                    if (item.Conquista == "Perfect")
+                    {
+                        pcbPerfect.Visible = true;
+                    }
 
-                if (conquista.Conquista == "Preparado")
-                {
-                    pcbPreparado.Visible = true;
+                    if (item.Conquista == "Preparado")
+                    {
+                        pcbPreparado.Visible = true;
+                    }
                 }
             }
         }
@@ -63,8 +67,13 @@ namespace Quiz_Projeto_Integrador.Telas
 
         }
 
-       
+
         private void lblNickname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pcbPreparado_Click(object sender, EventArgs e)
         {
 
         }

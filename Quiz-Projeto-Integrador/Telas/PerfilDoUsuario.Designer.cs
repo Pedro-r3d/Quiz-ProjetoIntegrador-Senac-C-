@@ -188,6 +188,7 @@
             pcbPreparado.TabIndex = 23;
             pcbPreparado.TabStop = false;
             pcbPreparado.Visible = false;
+            pcbPreparado.Click += pcbPreparado_Click;
             // 
             // pcbPerfect
             // 
